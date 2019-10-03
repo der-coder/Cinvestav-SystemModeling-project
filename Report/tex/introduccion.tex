@@ -1,20 +1,21 @@
 
-El péndulo simple es quizá el sistema físico más empleado en 
-academia para introducir conceptos de física y teoría de control.
-Su estudio como sistema lineal y como sistema no lineal permite el
-uso de múltiples técnicas de análisis para predecir su comportamiento
-así como controlar el mismo. Para el caso de mínima complejidad, 
-el sistema es modelado como un sistema de masa puntual 
-operando en un rango de movimiento angular menor a 20 grados.
-Estas consideraciones permiten linearizar el sistema al 
-reemplazar funciones trascendentales que describen 
-su movimiento por ecuaciones polinomiales.
+El péndulo simple puede considerarse como uno de los sistemas 
+físicos más utilizados en  para introducir conceptos de física 
+y teoría de control en el ámbito de educación. 
+A pesar de su naturaleza como sistema no lineal, es posible tratarlo como
+un sistema lineal al restringir su movimiento angular $\theta$ a un rango
+no mayor a 20 grados medido desde el eje vertical.
 
- 
- 
+Como se observa en la figura \ref{fig: simple pendulum}, 
+el péndulo simple consta de un objeto de masa $m$ suspendido 
+en el aire mediante un cuerpo rígido de longitud $l$. 
+Este cuerpo rígido se asume de masa negligible para el estudio 
+del sistema en este trabajo.
+
  \begin{figure}[ht]
     \centering
     \import{./img/}{pendulum_diagram.pdf_tex}
     \caption{Sistema de Péndulo simple.}
     \label{fig: simple pendulum}
 \end{figure}
+
