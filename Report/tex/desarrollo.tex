@@ -1,1 +1,70 @@
-El mecanismo de péndulo simple es ....
+
+El péndulo simple es un sistema el cual se basa en una particula de masa $m$ sostenido de un punto fijo por medio de una barra o hilo de masa despreciable y sin extenderse mas de su distancia $l$. (Insertar figura del péndulo)\\
+
+Para encontrar el movimiento de un péndulo se utilizaron los métodos de fuerza de Newton y el método de energías de Lagrange. Por medio del método de fuerzas de Newton, se desarrolla de la siguiente manera.
+\begin{large}
+\begin{gather*}
+\sum F = ma = -F_{mg} - F_f \\ \bigskip
+ml\ddot{\theta} = -mg\sin(\theta) - kl\dot{\theta} \\ \bigskip
+\ddot{\theta} = -\dfrac{g}{l}\sin(\theta) - \dfrac{k}{m}\dot{\theta} \\
+\end{gather*} 
+\end{large}
+\begin{flushright}
+\begin{small}
+m = masa del péndulo\\
+l = largo del péndulo\\
+k = constante fricción\\
+\end{small}
+\end{flushright}
+
+El modelo en base al método de Newton se basa en conocer las fuerzas actuando, las fuerzas principales que actúan sobre el péndulo es la fuerza ocasionada por el peso de la masa ($F_{mg}$) y la fuerza de al fricción que se opone al movimiento del péndulo ($F_f$).\\
+
+El segundo método utilizado para encontrar las ecuaciones de movimiento fue el de energías de Lagrange.
+\begin{large}
+\begin{equation} \label{L_equ}
+\dfrac{d}{dt} \dfrac{\partial L}{\partial \dot{\theta}} - \dfrac{\partial L}{\partial\theta} = 0
+\end{equation}
+\end{large}
+Por este método se necesitan desarrollar las ecuaciones de energía del péndulo.\\
+\begin{flushleft}
+{\large Energía Cinética}
+\end{flushleft}
+\begin{equation} \label{T_equ}
+T = \frac{1}{2}mv^2 = \frac{1}{2}m(l\theta)^2 = \frac{1}{2}ml^2\theta^2 
+\end{equation}
+\begin{flushleft}
+{\large Energía Potencial}
+\end{flushleft}
+\begin{equation} \label{V_equ}
+V = mgl(1-\cos \theta)
+\end{equation}
+Con estas ecuaciones se puede definir el Lagrangiano el cual es el que va a ser diferenciado por medio de la ecuación \ref{L_equ}. El Lagrangiano se define como:
+
+\begin{large}
+\begin{align*}
+L = T - V = \frac{1}{2}m(l\theta)^2 \\
+= \frac{1}{2}ml^2\theta^2 - mgl(1-\cos \theta)
+\end{align*}
+\end{large}
+
+\begin{large}
+\begin{equation*}
+\dfrac{d}{dt} \dfrac{\partial L}{\partial \dot{\theta}} = \dfrac{d}{dt} ml^2\dot{\theta}
+\end{equation*}
+\end{large}
+\begin{large}
+\begin{equation} \label{dLv_equ}
+\dfrac{d}{dt} ml^2\dot{\theta} = ml^2\ddot{\theta}
+\end{equation}
+\end{large}
+\begin{large}
+\begin{equation} \label{dLp_equ}
+\dfrac{\partial L}{\partial\theta} = -gl\sin(\theta)
+\end{equation}
+\end{large}
+Al unir la ecuación \ref{dLv_equ} menos la ecuación \ref{dLp_equ}, en base a la diferenciación del Lagrangiano (ecuación \ref{L_equ}), se obtiene la ecuación de movimiento del sistema.
+\begin{large}
+\begin{equation}
+ml^2\ddot{\theta} + gl\sin(\theta) = 0
+\end{equation}
+\end{large}
