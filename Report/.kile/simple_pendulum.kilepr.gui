@@ -1,7 +1,7 @@
 [General]
 kile_livePreviewEnabled=true
 kile_livePreviewStatusUserSpecified=false
-kile_livePreviewTool=LivePreview-PDFLaTeX
+kile_livePreviewTool=LivePreview-XeLaTeX
 lastDocument=tex/desarrollo.tex
 
 [document-settings,item:bibliografia.bib]
@@ -55,7 +55,7 @@ order=-1
 
 [item:report.tex]
 open=true
-order=1
+order=2
 
 [item:simple_pendulum.kilepr]
 open=false
@@ -67,7 +67,7 @@ order=-1
 
 [item:tex/desarrollo.tex]
 open=true
-order=2
+order=1
 
 [item:tex/introduccion.tex]
 open=true
@@ -78,36 +78,36 @@ open=false
 order=-1
 
 [view-settings,view=0,item:bibliografia.bib]
-CursorColumn=80
-CursorLine=1
+CursorColumn=17
+CursorLine=42
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,1,79,[,1,33,],1,79
+ViMarks=.,45,12,[,45,12,],45,24
 
 [view-settings,view=0,item:report.tex]
-CursorColumn=28
-CursorLine=65
+CursorColumn=14
+CursorLine=17
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,2,0,[,2,0,],2,20
+ViMarks=.,17,13,[,17,12,],17,13
 
 [view-settings,view=0,item:tex/desarrollo.tex]
-CursorColumn=12
-CursorLine=38
+CursorColumn=34
+CursorLine=110
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,38,11,[,38,8,],38,11
+ViMarks=.,109,47,[,109,42,],109,47
 
 [view-settings,view=0,item:tex/introduccion.tex]
-CursorColumn=0
-CursorLine=14
+CursorColumn=9
+CursorLine=30
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,13,0,[,13,0,],13,0
+ViMarks=.,30,8,[,29,0,],30,8
 
 [view-settings,view=0,item:tex/resultados.tex]
 CursorColumn=12

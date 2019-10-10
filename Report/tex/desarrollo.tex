@@ -1,28 +1,36 @@
 
-\subsection{Modelo matemático}
+La posición del objeto $m$ respecto a un marco de referencia no inercial
+ubicado en el punto de rotación del péndulo puede ser descrita como un par
+de coordenadas $\{x, y\}$ para un plano cartesiano. Estas coordenadas pueden
+ser expresadas también como funciones que dependen de la posición angular 
+$\theta$ del objeto con respecto al eje vertical del plano cartesiano y el
+tiempo $t$.
 
-Para describir el movimiento de un sistema de péndulo simple 
-restringido al plano bidimensional es necesario expresar 
-la posición y velocidad de la masa $m$ en función del movimiento
-angular $\theta$ y las fuerzas que actúan sobre el sistema.
-Se utilizaron dos metodologías para obtener las ecuaiones
-de movimiento del sistema: 
+Existen dos metodologías para obtener las ecuaciones para las coordenadas 
+$\{x, y\}$ del sistema:
 \begin{itemize}
- \item Suma de fuerzas del sistema empleando las leyes de movimiento de Newton.
- \item Conservación de energía mediante la ecuación de Euler-Lagrange.
+ \item Balance de fuerzas del sistema empleando las leyes de 
+ movimiento de Newton.
+ \item Conservación de energía mediante la ecuación de Euler-Lagrange
 \end{itemize}
+
+
 
 %  --------------------------
 %  Newton's Laws of Motion
 % ---------------------------
 
-Partiendo de las leyes de movimiento de Newton, se establece que la aceleración
-$a$ del objeto de masa $m$ puede ser descrita en función de las fuerzas 
-presentes en el sistema. 
+\subsection{Leyes de movimiento de Newton}
+
+Empleando las leyes de movimiento de Newton, 
+se establece que la aceleración $\textbf{a}$ que el objeto
+experimenta está determinada por el el
+efecto combinado de las fuerzas que actúan sobre el mismo.
 Como se observa en la figura \ref{fig: pendulum forces}, 
-para el caso de un péndulo simple se tienen dos fuerzas:
-la fuerza de gravedad $F_{mg}$ que actúa sobre el eje vertical 
-y la fuerza de fricción $F_f$ que se opone al movimiento del objeto. 
+para el caso de un péndulo simple sin fuerzas externas 
+hay dos vectores de fuerza presentes en el sistema:
+la fuerza de gravedad $\textbf{F}_{mg} = mg$ que actúa paralelo al eje vertical 
+y la fuerza de fricción $\textbf{F}_f = kl\dot{\theta}$ que se opone al movimiento del objeto. 
 
  \begin{figure}[ht]
     \centering
@@ -31,41 +39,82 @@ y la fuerza de fricción $F_f$ que se opone al movimiento del objeto.
     \label{fig: pendulum forces}
 \end{figure}
 
+De acuerdo al diagrama y empleando las leyes de movimiento de Newton, 
+el efecto combinado de las fuerzas en el objeto se expresan de la 
+siguiente manera:
+
+
 \begin{equation}
  \begin{split}
-  \sum \bold{F} & = m \bold{a}\\
+  \sum \textbf{F} & = m \textbf{a}\\
   \sum \bold{F} & = - \bold{F}_{mg} - \bold{F}_f
  \end{split}
  \label{eq: }
 \end{equation}
 
+Debido al movimiento circular del sistema, la fuerza de gravedad
+se descompone en dos vectores ortogonales que actúan cada uno sobre un eje 
+diferente. Esta descomposición del vector permite despreciar
+el efecto de uno de ellos para el estudio del sistema.
 
+\begin{equation*}
+ \begin{split}
+%   \sum F_y &= -mg \cos{\theta} \\
+  \sum F &= -mg \sin{\theta} - k l \dot{\theta}\\
+  m l \ddot{\theta} &= -mg \sin{\theta} - k l \dot{\theta}\\
+ \end{split}
+\end{equation*}
 
+Se resuelve la ecuación anterior para $\ddot{\theta}$.
 
-\begin{large}
-\begin{gather*}
-\sum F = ma = -F_{mg} - F_f \\ \bigskip
-ml\ddot{\theta} = -mg\sin(\theta) - kl\dot{\theta} \\ \bigskip
-\ddot{\theta} = -\dfrac{g}{l}\sin(\theta) - \dfrac{k}{m}\dot{\theta} \\
-\end{gather*} 
-\end{large}
-\begin{flushright}
-\begin{small}
-m = masa del péndulo\\
-l = largo del péndulo\\
-k = constante fricción\\
-\end{small}
-\end{flushright}
-
-El modelo en base al método de Newton se basa en conocer las fuerzas actuando, las fuerzas principales que actúan sobre el péndulo es la fuerza ocasionada por el peso de la masa ($F_{mg}$) y la fuerza de al fricción que se opone al movimiento del péndulo ($F_f$).\\
-
-El segundo método utilizado para encontrar las ecuaciones de movimiento fue el de energías de Lagrange.
-\begin{large}
-\begin{equation} \label{L_equ}
-\dfrac{d}{dt} \dfrac{\partial L}{\partial \dot{\theta}} - \dfrac{\partial L}{\partial\theta} = 0
+\begin{equation}
+ \ddot{\theta} = - \dfrac{g}{l} \sin{\theta} - \dfrac{k}{m} \dot{\theta}
 \end{equation}
-\end{large}
-Por este método se necesitan desarrollar las ecuaciones de energía del péndulo.\\
+
+
+\subsection{Conservación de energía | Euler-Lagrange}
+
+El método de conservación de energía del sistema se sustenta
+en la ecuación de Euler-Lagrange, la cual describe que para un
+sistema dado la energía total del sistema permanece constante.
+
+\begin{equation}
+ \dfrac{d}{dt} \dfrac{\partial L}{\partial \dot{q}} - 
+ \dfrac{\partial L}{\partial q} = 0
+ \label{eq: euler lagrange equation}
+\end{equation}
+
+El Lagrangiano $L$ del sistema relaciona la energía cinética $T$ 
+del péndulo con el potencial de energía $V$ en el sistema.
+
+\begin{equation*}
+\begin{split}
+ T &= \dfrac{1}{2} m v^2\\
+ &= \dfrac{1}{2} m (l\dot{\theta})^2\\
+ &= \dfrac{1}{2} m l^2 \dot{\theta}^2\\
+\end{split}
+\label{eq: kinetic energy}
+\end{equation*}
+
+\begin{equation*}
+ V = m g l \left( 1 - \cos{\theta} \right)
+ \label{eq: potential energy}
+\end{equation*}
+
+Recordando la ecuación para el Lagrangiano $L = T - V$ se obtienen las 
+derivadas parciales del mismo, considerando que $q = \theta$.
+
+\begin{equation}
+ \begin{split}
+  L & = \dfrac{1}{2}m l^2 \dot{\theta}^2 - m g l (1 - \cos{\theta})\\
+  \dfrac{\partial L}{\partial \theta} &= - m g l \sin{\theta} \\
+  \dfrac{\partial L}{\partial \dot{\theta}} &=\\
+  \dfrac{d}{dt}\dfrac{\partial L}{\partial \dot{\theta}} &=\\
+ \end{split}
+\end{equation}
+
+
+
 \begin{flushleft}
 {\large Energía Cinética}
 \end{flushleft}
