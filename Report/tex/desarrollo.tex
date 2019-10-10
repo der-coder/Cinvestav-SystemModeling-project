@@ -17,10 +17,30 @@ de movimiento del sistema:
 % ---------------------------
 
 Partiendo de las leyes de movimiento de Newton, se establece que la aceleración
-del objeto de masa $m$ puede ser descrita en función de las fuerzas 
-presentes en el sistema. Para el caso de un péndulo simple se tienen dos fuerzas:
-la fuerza de gravedad $F_g$ que actúa sobre todos los cuerpos 
-y la fuerza de fricción $F_f$ que se opone al movimiento del objeto.
+$a$ del objeto de masa $m$ puede ser descrita en función de las fuerzas 
+presentes en el sistema. 
+Como se observa en la figura \ref{fig: pendulum forces}, 
+para el caso de un péndulo simple se tienen dos fuerzas:
+la fuerza de gravedad $F_{mg}$ que actúa sobre el eje vertical 
+y la fuerza de fricción $F_f$ que se opone al movimiento del objeto. 
+
+ \begin{figure}[ht]
+    \centering
+    \import{./img/}{pendulum_forces.pdf_tex}
+    \caption{Diagrama de fuerzas.}
+    \label{fig: pendulum forces}
+\end{figure}
+
+\begin{equation}
+ \begin{split}
+  \sum \bold{F} & = m \bold{a}\\
+  \sum \bold{F} & = - \bold{F}_{mg} - \bold{F}_f
+ \end{split}
+ \label{eq: }
+\end{equation}
+
+
+
 
 \begin{large}
 \begin{gather*}
