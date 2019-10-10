@@ -1,11 +1,11 @@
-function pendulin
+%function pendulin
 %% Simulacion del pendulo
 clear
 clc
-
+close all
 
 %% Variables para ODE45
-tspan = [0 15];
+tspan = 0:(1/24):15;
 l = 1.5;        % Largo del pendulo (m)
 m = 2;          % Masa de la bola (kg)
 k = 1;          % Coeficiente de friccion
@@ -33,9 +33,11 @@ grid on
 
 
 %% Simulación de pendulo
-simulacion(t,x,l)
+simulacion(t,x,l,m)
 
-end
+
+
+%end
 
 
 %% Funcion para ODE45
@@ -48,9 +50,11 @@ dx(2) = -(g/l)*sin(x(1)) - (k/m)*x(2);
 dx = dx';
 end
 
-function simulacion(t,x,l)
+function simulacion(t,x,l,m)
 pos(:,1) = x(:,1);
 pos(:,2) = -sqrt(l^2 - x(:,1).^2);
+str3 = strcat('l =    ', num2str(l));
+str4 = strcat('m =    ', num2str(m));
 
 fig = figure(3);
 set(gcf, 'Position', get(0, 'Screensize'));
@@ -62,7 +66,7 @@ grid on
 n = size(pos,1);
 for i = 1:n
     cla(gca(fig));
-    plot([0 pos(i,1)],[0 pos(i,2)],'k')
+    plot([0 pos(i,1)],[0 pos(i,2)],'k');
     
     str0 = strcat('t =   ',num2str(t(i)));
     str1 = strcat('x =   ',num2str(pos(i,1)));
@@ -70,11 +74,18 @@ for i = 1:n
     text(l-.25,-l,str0,'Fontsize',16)
     text(l-.25,-l-.10,str1,'Fontsize',16)
     text(l-.25,-l-.20,str2,'Fontsize',16)
+    text(0+.25,0+.25,str3,'Fontsize',18)
+    text(0+.25,0+.15,str4,'Fontsize',18)
     
     viscircles(pos(i,:),.1);
     drawnow
-    
-    pause(t(size(t,1))/n);
+    k(i) = getframe(fig);
+    %pause(t(size(t,1)/n));
 end
+video = VideoWriter('Pendulo', 'MPEG-4');
+video.FrameRate = 24;
 
+open(video);
+writeVideo(video, k);
+close(video);
 end
