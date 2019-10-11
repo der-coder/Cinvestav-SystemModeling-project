@@ -1,4 +1,7 @@
 \documentclass[conference]{IEEEtran}
+
+\usepackage{hyperref}
+
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{algorithmic}
@@ -12,8 +15,25 @@
 \usepackage{pdfpages}
 \usepackage{transparent}
 
+\usepackage{bm}
+
+
+
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+    
+    \DeclareRobustCommand{\uvec}[1]{{%
+  \ifcat\relax\noexpand#1%
+    % it should be a Greek letter
+    \bm{\hat{#1}}%
+  \else
+    \ifcsname uvec#1\endcsname
+      \csname uvec#1\endcsname
+    \else
+      \bm{\hat{\mathbf{#1}}}%
+     \fi
+   \fi
+}}
     
 \begin{document}
 
@@ -40,9 +60,9 @@ Péndulo Simple - Análisis, simulación y construcción\\
 
 El sistema del péndulo simple es uno de los sistemas más estudiados
 en teoría de control. 
-Su fácil construcción y modelado permite el diseño de diferentes estrategias
-de control y una gran facilidad de probar dichas estrategias antes de 
-implementarlas en un sistema más complejo.
+Su diseño y contrucción de baja dficultad hacen de este sistema uno de
+los más accesibles para modelar y contrastar con una implementación
+física.
 El documento presente muestra el estudio del sistema sin linearización.
 El estudio comprende la obtención de las ecuaciones de movimiento,
 la simulación del mismo en Matlab y la comparación del modelo con
@@ -57,8 +77,11 @@ un sistema físico.
 \section{Introducción}
 \input{./tex/introduccion.tex}
 
-\section{Desarrollo}
+\section{Modelo Matemático}
 \input{./tex/desarrollo.tex}
+
+\section{Simulación}
+\input{./tex/simulacion.tex}
 
 \section{Resultados}
 \input{./tex/resultados.tex}
