@@ -3,7 +3,7 @@ La posición del objeto $m$ respecto a un marco de referencia no inercial
 ubicado en el punto de rotación del péndulo puede ser descrita como un par
 de coordenadas $\{x, y\}$ para un plano cartesiano. Estas coordenadas pueden
 ser expresadas también como funciones que dependen de la posición angular 
-$\theta$ del objeto con respecto al eje vertical del plano cartesiano y el
+$\theta = \theta(t)$ del objeto con respecto al eje vertical del plano cartesiano y el
 tiempo $t$.
 
 Existen dos metodologías para obtener las ecuaciones para las coordenadas 
@@ -69,6 +69,7 @@ Se resuelve la ecuación anterior para $\ddot{\theta}$.
 
 \begin{equation}
  \ddot{\theta} = - \dfrac{g}{l} \sin{\theta} - \dfrac{k}{m} \dot{\theta}
+ \label{eq: newton equation}
 \end{equation}
 
 
@@ -108,52 +109,29 @@ derivadas parciales del mismo, considerando que $q = \theta$.
  \begin{split}
   L & = \dfrac{1}{2}m l^2 \dot{\theta}^2 - m g l (1 - \cos{\theta})\\
   \dfrac{\partial L}{\partial \theta} &= - m g l \sin{\theta} \\
-  \dfrac{\partial L}{\partial \dot{\theta}} &=\\
-  \dfrac{d}{dt}\dfrac{\partial L}{\partial \dot{\theta}} &=\\
+  \dfrac{\partial L}{\partial \dot{\theta}} &= m l^2 \dot{\theta}\\
+  \dfrac{d}{dt}\dfrac{\partial L}{\partial \dot{\theta}} &=ml^2 \ddot{\theta}\\
+ \end{split}
+ \label{eq: partial derivatives}
+\end{equation}
+
+Evaluando las derivadas parciales de \eqref{eq: partial derivatives} en 
+la ecuación \eqref{eq: euler lagrange equation} se obtiene
+
+\begin{equation}
+ \begin{split}
+    ml^2 \ddot{\theta} + m g l \sin{\theta} &= 0\\
+    \ddot{\theta} &= -\dfrac{mgl \sin{\theta}}{ml^2}\\
+    \ddot{\theta} &= - \dfrac{g}{l} \sin{\theta}
  \end{split}
 \end{equation}
 
+Cabe resaltar que para el método de conservación de 
+energía las fuerzas no conservativas no 
+fueron consideradas en el desarrollo matemático del modelo.
+Por ello, si se desprecia el efecto de la fricción en 
+\eqref{eq: newton equation} se observa que la ecuación
+de $\ddot{\theta}$ es la misma para ambos métodos.
 
+\subsection{Representación de espacio de estados}
 
-\begin{flushleft}
-{\large Energía Cinética}
-\end{flushleft}
-\begin{equation} \label{T_equ}
-T = \frac{1}{2}mv^2 = \frac{1}{2}m(l\theta)^2 = \frac{1}{2}ml^2\theta^2 
-\end{equation}
-\begin{flushleft}
-{\large Energía Potencial}
-\end{flushleft}
-\begin{equation} \label{V_equ}
-V = mgl(1-\cos \theta)
-\end{equation}
-Con estas ecuaciones se puede definir el Lagrangiano el cual es el que va a ser diferenciado por medio de la ecuación \ref{L_equ}. El Lagrangiano se define como:
-
-\begin{large}
-\begin{align*}
-L = T - V = \frac{1}{2}m(l\theta)^2 \\
-= \frac{1}{2}ml^2\theta^2 - mgl(1-\cos \theta)
-\end{align*}
-\end{large}
-
-\begin{large}
-\begin{equation*}
-\dfrac{d}{dt} \dfrac{\partial L}{\partial \dot{\theta}} = \dfrac{d}{dt} ml^2\dot{\theta}
-\end{equation*}
-\end{large}
-\begin{large}
-\begin{equation} \label{dLv_equ}
-\dfrac{d}{dt} ml^2\dot{\theta} = ml^2\ddot{\theta}
-\end{equation}
-\end{large}
-\begin{large}
-\begin{equation} \label{dLp_equ}
-\dfrac{\partial L}{\partial\theta} = -gl\sin(\theta)
-\end{equation}
-\end{large}
-Al unir la ecuación \ref{dLv_equ} menos la ecuación \ref{dLp_equ}, en base a la diferenciación del Lagrangiano (ecuación \ref{L_equ}), se obtiene la ecuación de movimiento del sistema.
-\begin{large}
-\begin{equation}
-ml^2\ddot{\theta} + gl\sin(\theta) = 0
-\end{equation}
-\end{large}
