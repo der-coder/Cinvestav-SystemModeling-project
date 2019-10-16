@@ -5,11 +5,13 @@ clc
 close all
 
 %% Variables para ODE45
-tspan = [0 15];
+
+
+tspan = 0:1/30:5;
 
 l = 2.5;        % Largo del pendulo (m)
 m = 5;          % Masa de la bola (kg)
-k = 1;          % Coeficiente de friccion
+k = 0;          % Coeficiente de friccion
 theta = pi/2;
 
 p0 = [theta 0];         %theta, d_theta
@@ -17,7 +19,7 @@ p0 = [theta 0];         %theta, d_theta
 [t,thet] = ode45(@(t,y)pendulo(t,y,l,m,k),tspan,p0);
 
 figure('Name','Poscicion y Velocidad')
-plot(t,thet(:,1),'k',t,thet(:,2),'k--','linewidth',3)
+plot(t,thet(:,1),'k',t,thet(:,2),'k--','linewidth',1)
 xlabel('Tiempo','Interpreter','latex','fontsize',16)
 ylabel('$/theta / \dot{?theta}$','Interpreter','latex','fontsize',16)
 legend({'$x$','$\dot{x}$'},'Interpreter','latex','Location','Southeast','fontsize',14)
@@ -26,7 +28,9 @@ set(gcf,'Color',[1 1 1])
 grid on
 
 figure('Name','Retrato Fase')
-plot(thet(:,1),thet(:,2),'k','linewidth',3)
+
+plot(thet(:,1),thet(:,2),'k','linewidth',1)
+
 xlabel('Posicion (x)','Interpreter','latex','fontsize',14)
 ylabel('Velocidad ($\dot{x}$)','Interpreter','latex','fontsize',14)
 title('Retrato fase $x / \dot{x}$','Interpreter','latex','fontsize',16)
@@ -81,7 +85,9 @@ for i = 1:n
     viscircles(pos,.1);
     drawnow
 %     k(i) = getframe(fig);
-    %pause(1/30)
+
+    pause(1/30)
+
 end
 % video = VideoWriter('Pendulo', 'MPEG-4');
 % video.FrameRate = 30;
