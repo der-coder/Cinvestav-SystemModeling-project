@@ -1,30 +1,32 @@
-%function pendulin
+function pendulin
 %% Simulacion del pendulo
 clear
 clc
 close all
 
 %% Variables para ODE45
-tspan = 0:(1/24):15;
-l = 1.5;        % Largo del pendulo (m)
-m = 2;          % Masa de la bola (kg)
-k = 1;          % Coeficiente de friccion
+tspan = 0:1/30:5;
 
-p0 = [l*sind(90);0];         %x, dx
+l = 2.5;        % Largo del pendulo (m)
+m = 5;          % Masa de la bola (kg)
+k = 0;          % Coeficiente de friccion
+theta = pi/2;
 
-[t,x] = ode45(@(t,y)pendulo(t,y,l,m,k),tspan,p0);
+p0 = [theta 0];         %theta, d_theta
+
+[t,thet] = ode45(@(t,y)pendulo(t,y,l,m,k),tspan,p0);
 
 figure('Name','Poscicion y Velocidad')
-plot(t,x(:,1),'k',t,x(:,2),'k--','linewidth',1)
+plot(t,thet(:,1),'k',t,thet(:,2),'k--','linewidth',1)
 xlabel('Tiempo','Interpreter','latex','fontsize',16)
-ylabel('$x / \dot{x}$','Interpreter','latex','fontsize',16)
+ylabel('$/theta / \dot{?theta}$','Interpreter','latex','fontsize',16)
 legend({'$x$','$\dot{x}$'},'Interpreter','latex','Location','Southeast','fontsize',14)
 title('Posicion/Velocidad péndulo','fontsize',18)
 set(gcf,'Color',[1 1 1])
 grid on
 
 figure('Name','Retrato Fase')
-plot(x(:,1),x(:,2),'k','linewidth',1)
+plot(thet(:,1),thet(:,2),'k','linewidth',1)
 xlabel('Posicion (x)','Interpreter','latex','fontsize',14)
 ylabel('Velocidad ($\dot{x}$)','Interpreter','latex','fontsize',14)
 title('Retrato fase $x / \dot{x}$','Interpreter','latex','fontsize',16)
@@ -33,11 +35,11 @@ grid on
 
 
 %% Simulación de pendulo
-simulacion(t,x,l,m)
+X = l*sin(thet(:,1));
+Y = -l*cos(thet(:,1));
+simulacion(t,X,Y,l)
 
-
-
-%end
+end
 
 
 %% Funcion para ODE45
@@ -50,42 +52,41 @@ dx(2) = -(g/l)*sin(x(1)) - (k/m)*x(2);
 dx = dx';
 end
 
-function simulacion(t,x,l,m)
-pos(:,1) = x(:,1);
-pos(:,2) = -sqrt(l^2 - x(:,1).^2);
-str3 = strcat('l =    ', num2str(l));
-str4 = strcat('m =    ', num2str(m));
+function simulacion(t,x,y,l)
+
+x_min = min(x);
+x_max = max(x);
+y_min = min(y);
+y_max = max(y);
+
+str0 = string(strcat('t = ',num2str(round(t,2))));
+str1 = string(strcat('x = ',num2str(round(x,2))));
+str2 = string(strcat('y = ',num2str(round(y,2))));
 
 fig = figure(3);
 set(gcf, 'Position', get(0, 'Screensize'));
-ax = [-l-.5 l+.5 -l-.5 .5];
+ax = [x_min-.5 x_max+.5 y_min-.5 y_max+.5];
 axis (ax)
 hold on
 grid on
 
-n = size(pos,1);
+n = size(t,1);
 for i = 1:n
     cla(gca(fig));
-    plot([0 pos(i,1)],[0 pos(i,2)],'k');
-    
-    str0 = strcat('t =   ',num2str(t(i)));
-    str1 = strcat('x =   ',num2str(pos(i,1)));
-    str2 = strcat('y =   ',num2str(pos(i,2)));
-    text(l-.25,-l,str0,'Fontsize',16)
-    text(l-.25,-l-.10,str1,'Fontsize',16)
-    text(l-.25,-l-.20,str2,'Fontsize',16)
-    text(0+.25,0+.25,str3,'Fontsize',18)
-    text(0+.25,0+.15,str4,'Fontsize',18)
-    
-    viscircles(pos(i,:),.1);
+    plot([0 x(i)],[0 y(i)],'k');
+    text(l-.25,-l,str0(i),'Fontsize',16)
+    text(l-.25,-l-.10,str1(i),'Fontsize',16)
+    text(l-.25,-l-.20,str2(i),'Fontsize',16)
+    pos = [x(i) y(i)];
+    viscircles(pos,.1);
     drawnow
-    k(i) = getframe(fig);
-    %pause(t(size(t,1)/n));
+%     k(i) = getframe(fig);
+    pause(1/30)
 end
-video = VideoWriter('Pendulo', 'MPEG-4');
-video.FrameRate = 24;
-
-open(video);
-writeVideo(video, k);
-close(video);
+% video = VideoWriter('Pendulo', 'MPEG-4');
+% video.FrameRate = 30;
+% open(video);
+% writeVideo(video, k);
+% close(video);
+close (fig)
 end
