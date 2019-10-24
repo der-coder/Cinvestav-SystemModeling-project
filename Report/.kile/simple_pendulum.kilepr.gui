@@ -1,6 +1,6 @@
 [General]
-kile_livePreviewEnabled=true
-kile_livePreviewStatusUserSpecified=false
+kile_livePreviewEnabled=false
+kile_livePreviewStatusUserSpecified=true
 kile_livePreviewTool=LivePreview-XeLaTeX
 lastDocument=report.tex
 
@@ -99,12 +99,12 @@ TextFolding=[]
 ViMarks=.,45,12,[,45,12,],45,24
 
 [view-settings,view=0,item:report.tex]
-CursorColumn=27
-CursorLine=83
+CursorColumn=33
+CursorLine=67
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,83,26,[,83,7,],83,26
+ViMarks=.,67,32,[,67,27,],67,32
 
 [view-settings,view=0,item:tex/desarrollo.tex]
 CursorColumn=0
