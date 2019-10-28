@@ -272,4 +272,9 @@ TSWLatexianTemp*
 # glossaries
 *.glstex
 
+
+### Report pdf file ###
+
+Report/report.pdf
+
 # End of https://www.gitignore.io/api/latex
