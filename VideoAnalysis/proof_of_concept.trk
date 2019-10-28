@@ -26,7 +26,7 @@
     <object class="org.opensourcephysics.media.core.StepperClipControl">
         <property name="rate" type="double">1.0</property>
         <property name="delta_t" type="double">33.28914431673052</property>
-        <property name="frame" type="int">61</property>
+        <property name="frame" type="int">19</property>
     </object>
     </property>
     <property name="coords" type="object">
@@ -58,6 +58,15 @@
             <object class="org.opensourcephysics.media.core.ImageCoordSystem$FrameData">
                 <property name="xorigin" type="double">756.5495207667732</property>
                 <property name="yorigin" type="double">442.8753993610224</property>
+                <property name="angle" type="double">0.0</property>
+                <property name="xscale" type="double">1825.3138530532854</property>
+                <property name="yscale" type="double">1825.3138530532854</property>
+            </object>
+            </property>
+            <property name="[75]" type="object">
+            <object class="org.opensourcephysics.media.core.ImageCoordSystem$FrameData">
+                <property name="xorigin" type="double">765.6913827655311</property>
+                <property name="yorigin" type="double">457.27454909819653</property>
                 <property name="angle" type="double">0.0</property>
                 <property name="xscale" type="double">1825.3138530532854</property>
                 <property name="yscale" type="double">1825.3138530532854</property>
@@ -724,7 +733,7 @@
         </object>
         </property>
     </property>
-    <property name="selectedtrack" type="string">mass A</property>
+    <property name="selectedtrack" type="string">axes</property>
     <property name="dividers" type="array" class="[D">
         <property name="array" type="string">{0.3749072011878248,1.0,1.0,0.19227913882702302}</property>
     </property>
@@ -739,8 +748,8 @@
                         <property name="track" type="string">mass A</property>
                         <property name="plot0" type="object">
                         <object class="org.opensourcephysics.cabrillo.tracker.TrackPlottingPanel">
-                            <property name="x_var" type="string">y</property>
-                            <property name="y_var" type="string">vy</property>
+                            <property name="x_var" type="string">x</property>
+                            <property name="y_var" type="string">vx</property>
                             <property name="lines" type="boolean">true</property>
                             <property name="points" type="boolean">true</property>
                         </object>
