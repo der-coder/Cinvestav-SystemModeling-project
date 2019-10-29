@@ -1,0 +1,67 @@
+\section{Marco Teórico}
+
+\subsection{Leyes de movimiento de Newton}
+% De acuerdo a la traducción realizada por Andrew Motte
+% http://gravitee.tripod.com/
+% https://en.wikisource.org/wiki/The_Mathematical_Principles_of_Natural_Philosophy_(1729)
+
+Sir Isaac Newton establece en su obra \emph{Principia Mathematica} las tres leyes que fungen como la fundación de la mecánica clásica.
+
+\begin{enumerate}
+ \item Un cuerpo mantiene su estatus quo, 
+ respecto a un marco referencial inercial, salvo
+ que una fuerza externa actué sobre éste. (Ley de inercia)
+ \begin{equation}
+  \sum \bold{F} = 0 \iff \dfrac{d \bold{v}}{dt} = 0
+ \end{equation}
+
+ \item La tasa de cambio de la cantidad de movimiento (momentum) de un cuerpo
+ es directamente proporcional a la fuerza aplicada. (Conservación del momentum)
+ \begin{equation}
+  \bold{F} = \dfrac{d \bold{p}}{dt}
+  \label{eq: 2nd law of motion}
+ \end{equation}
+
+ \item El efecto mútuo de dos cuerpos que actúan 
+ uno sobre el otro es siempre igual y en direcciones contrarias.
+ \begin{equation}
+  \bold{F}_{a/b} = -\bold{F}_{b/a}
+ \end{equation}
+
+\end{enumerate}
+
+Dado que la cantidad de movimiento es descrita en función de la masa ($m$)
+del objeto y su velocidad lineal ($\bold{v}$), 
+es posible expresar \eqref{eq: 2nd law of motion} de la siguiente manera
+\begin{equation}
+ \begin{split}
+  \sum \bold{F} & = \dfrac{d \bold{p}}{dt}\\
+  \bold{p} & = m \bold{v}\\
+  \sum \bold{F} & = \dfrac{d m\bold{v}}{dt}\\
+%   \sum \bold{F} & = m\dfrac{d\bold{v}}{dt}\\
+  \sum \bold{F} & = m\dfrac{d\bold{a}}{dt}
+ \end{split}
+ \label{eq: conservation of linear momentum}
+\end{equation}
+
+De manera similar, la conservación de movimiento \emph{angular} ($L$), 
+que relaciona el momento de inercia ($I$) de un cuerpo con su 
+velocidad angular ($\omega$),
+se expresa en función del torque que se aplica en un cuerpo 
+respecto a un marco de referencia.
+
+\begin{equation}
+ \begin{split}
+  \sum \boldsymbol{\tau} &= \dfrac{d \bold{L}}{dt} \\
+  \bold{L} & = I \boldsymbol{\omega}\\
+  \sum \boldsymbol{\tau} &= \dfrac{d I \boldsymbol{\omega}}{dt} \\
+  \sum \boldsymbol{\tau} &= I \dfrac{d \boldsymbol{\alpha}}{dt} 
+ \end{split}
+ \label{eq: conservation of angular momentum}
+\end{equation}
+
+% 2nd Law of motion for rotational systems
+
+\subsection{Conservación de energía}
+
+%  Euler-Lagrange equation
