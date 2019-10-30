@@ -17,10 +17,11 @@ y se incluye como anexo.
 \hline
 Longitud ($l$) & 2.5 [m] \\
 Masa ($m$) & 5 [kg]\\
-Coeficiente de fricción ($k$) & 1 [$N \cdot s / m$] \\
+Coeficiente de fricción ($k$) & $\{0,1\}$ [$N \cdot s / m$] \\
 Posición angular inicial ($\theta_0$) & $0.5\pi$ [rad] \\
 Velocidad angular inicial ($\dot{\theta}$) & 0 [rad/s] \\
-Tiempo de simulación & 15 [s]  \\
+Tiempo de simulación & 5 [s]  \\
+Paso de iteración & 1/30 [s] \\
 Gravedad ($g$) & 9.81 [$m/s^2$]  \\
 \hline
  \end{tabular}
@@ -29,6 +30,39 @@ Gravedad ($g$) & 9.81 [$m/s^2$]  \\
 \label{table: simulation conditions}
 \end{table}
 
+\subsection{Caso sin fricción}
+
+% TODO UPDATE TEXT TO MATCH WRITING STYLE
+
+Podemos observar la figura de un circulo. 
+Esto ocurre, porque el sistema no tiene fricción,
+no existe una fuerza que detenga el movimiento, 
+ni disminuya la velocidad del péndulo, 
+por lo cual tenemos un movimiento armónico simple.
+
+En la figura \ref{fig: time plot - NF} se 
+representa la posición y velocidad del péndulo en el tiempo.
+
+
+\begin{figure}[hb]
+ \centering 
+ \includegraphics[scale=0.3]{./img/PosVelNF.png}
+ % fasependulox2.png: 1853x1003 px, 96dpi, 49.02x26.53 cm, bb=0 0 1390 752
+ \caption{Comportamiento de $\theta(t)$ y $\dot{\theta}(t)$ en el tiempo.}
+ \label{fig: time plot theta dtheta no friction}
+\end{figure}
+
+\begin{figure}[hb]
+ \centering 
+ \includegraphics[scale=0.3]{./img/faseNF.png}
+ % fasependulox2.png: 1853x1003 px, 96dpi, 49.02x26.53 cm, bb=0 0 1390 752
+\caption{Diagrama de fase de $\theta(t)$ y $\dot{\theta}(t)$.}
+ \label{fig: phase plot theta no friction}
+\end{figure}
+
+
+
+\subsection{Caso con fricción}
 
 Se observa que el péndulo tiende a una posición de reposo debido
 al efecto que la fuerza de fricción tiene sobre el sistema.
@@ -41,19 +75,16 @@ posicionando al péndulo en el eje vertical del marco referencial.
 
 \begin{figure}[hb]
  \centering 
- \includegraphics[scale=0.35]{./img/faseNF.png}
+ \includegraphics[scale=0.3]{./img/PosVelF.png}
  % fasependulox2.png: 1853x1003 px, 96dpi, 49.02x26.53 cm, bb=0 0 1390 752
  \caption{Comportamiento de $\theta(t)$ y $\dot{\theta}(t)$ en el tiempo.}
- \label{fig: time plot theta dtheta}
+ \label{fig: time plot theta dtheta friction}
 \end{figure}
 
 \begin{figure}[hb]
  \centering 
-%  \includegraphics[scale=0.35]{./img/fasependulox2.png}
+ \includegraphics[scale=0.3]{./img/faseF.png}
  % fasependulox2.png: 1853x1003 px, 96dpi, 49.02x26.53 cm, bb=0 0 1390 752
 \caption{Diagrama de fase de $\theta(t)$ y $\dot{\theta}(t)$.}
- \label{fig: phase plot theta}
+ \label{fig: phase plot theta friction}
 \end{figure}
-
-
-
