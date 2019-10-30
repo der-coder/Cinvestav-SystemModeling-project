@@ -276,5 +276,9 @@ TSWLatexianTemp*
 ### Report pdf file ###
 
 Report/report.pdf
+Report/.kile/*
+presentation/.kile/*
+
+*.png~
 
 # End of https://www.gitignore.io/api/latex

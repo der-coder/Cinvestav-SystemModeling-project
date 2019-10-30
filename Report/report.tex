@@ -1,8 +1,9 @@
-\documentclass[journal, onecolumn]{IEEEtran}
+% \documentclass[conference, onecolumn]{IEEEtran}
+
+\documentclass[letterpaper, 12pt]{article}
 
 \usepackage{hyperref}
 
-\usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{algorithmic}
 \usepackage{graphicx}
@@ -10,6 +11,10 @@
 \usepackage{xcolor}
 \usepackage[spanish,mexico]{babel}
 
+\usepackage{biblatex}
+\addbibresource{bibliografia.bib}
+
+\usepackage{float}
 \usepackage{import}
 \usepackage{xifthen}
 \usepackage{pdfpages}
@@ -17,42 +22,22 @@
 \usepackage[center]{caption}
 \usepackage{bm}
 
-
-
-\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
-    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
-    
-    \DeclareRobustCommand{\uvec}[1]{{%
-  \ifcat\relax\noexpand#1%
-    % it should be a Greek letter
-    \bm{\hat{#1}}%
-  \else
-    \ifcsname uvec#1\endcsname
-      \csname uvec#1\endcsname
-    \else
-      \bm{\hat{\mathbf{#1}}}%
-     \fi
-   \fi
-}}
-    
 \begin{document}
 
 \title{
-Péndulo Simple - Análisis, simulación y construcción\\
+Péndulo Simple\\
+Análisis, simulación y construcción\\
 }
 
 
 \author{
-    \IEEEauthorblockN{
     Enrique Benavides Téllez, Isaac Ayala Lozano,\\ 
-    Sandy Natalie Campos Martínez, Luis Gerardo Almanza Granados\\
-    y Yair Casas Flores\\
-    }
-    \IEEEauthorblockA{
-    \textit{Robótica y Manufactura Avanzada} \\
-    \textit{CINVESTAV}\\
-        Ramos Arizpe, México}
+    Sandy Natalie Campos Martínez,\\
+    Luis Gerardo Almanza Granados\\
+    y Yair Casas Flores
 }
+
+\date{}
 
 \maketitle
 
@@ -69,14 +54,14 @@ Péndulo Simple - Análisis, simulación y construcción\\
 % un sistema físico.
 
 
-Se presentan un estudio del sistema de péndulo simple.
-El estudio incluye el desarrollo de un modelo matemático
+Se presenta el desarrollo de un modelo matemático
 para el péndulo simple mediante dos estrategias de desarrollo:
 método de sumatoria de fuerzas y método de conservación de energía.
-Se presentan los resultados de los simuladores desarrollados 
+Se incluye también los resultados de los simuladores desarrollados 
 en MATLAB.
-Se incluye también la comparación de los modelos matemáticos 
-con una implementación física del péndulo simple.
+Se presenta además una comparación de los modelos matemáticos 
+con una implementación física del péndulo simple empleando el 
+kit de LEGO Mindstorm.
 
 \end{abstract}
 
@@ -84,15 +69,14 @@ con una implementación física del péndulo simple.
 % \end{IEEEkeywords}
 
 
-\input{./tex/introduccion.tex}
-\input{./tex/desarrollo.tex}
-\input{./tex/simulacion.tex}
-\input{./tex/fisico.tex}
-\input{./tex/resultados.tex}
-\input{./tex/conclusiones.tex}
+\input{./tex/introduccion}
+\input{./tex/marcoteorico}
+\input{./tex/desarrollo}
+\input{./tex/simulacion}
+\input{./tex/fisico}
+\input{./tex/resultados}
+\input{./tex/conclusiones}
 
-here \cite{susskind}.
-
-\bibliographystyle{IEEEtran}
-\bibliography{bibliografia.bib}
+% \bibliographystyle{IEEEtran}
+\printbibliography{}
 \end{document}

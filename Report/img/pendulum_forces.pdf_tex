@@ -54,7 +54,7 @@
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{pendulum_forces.pdf}}%
-    \put(0.56774134,0.10118585){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\bold{F}_{mg}$\end{tabular}}}}%
+    \put(0.56774134,0.10118585){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mathbf{F}_{mg}$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{pendulum_forces.pdf}}%
     \put(0.05086811,0.54417537){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\theta$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{pendulum_forces.pdf}}%

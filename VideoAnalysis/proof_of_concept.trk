@@ -4,8 +4,8 @@
     <property name="width" type="double">1920.0</property>
     <property name="height" type="double">1080.0</property>
     <property name="magnification" type="double">-1.0</property>
-    <property name="center_x" type="int">249</property>
-    <property name="center_y" type="int">273</property>
+    <property name="center_x" type="int">275</property>
+    <property name="center_y" type="int">268</property>
     <property name="videoclip" type="object">
     <object class="org.opensourcephysics.media.core.VideoClip">
         <property name="video" type="object">
@@ -26,7 +26,7 @@
     <object class="org.opensourcephysics.media.core.StepperClipControl">
         <property name="rate" type="double">1.0</property>
         <property name="delta_t" type="double">33.28914431673052</property>
-        <property name="frame" type="int">19</property>
+        <property name="frame" type="int">14</property>
     </object>
     </property>
     <property name="coords" type="object">
@@ -40,7 +40,7 @@
             <object class="org.opensourcephysics.media.core.ImageCoordSystem$FrameData">
                 <property name="xorigin" type="double">455.97444089456866</property>
                 <property name="yorigin" type="double">399.93610223642173</property>
-                <property name="angle" type="double">0.0</property>
+                <property name="angle" type="double">180.0</property>
                 <property name="xscale" type="double">1825.3138530532854</property>
                 <property name="yscale" type="double">1825.3138530532854</property>
             </object>
@@ -49,7 +49,7 @@
             <object class="org.opensourcephysics.media.core.ImageCoordSystem$FrameData">
                 <property name="xorigin" type="double">455.9744408945688</property>
                 <property name="yorigin" type="double">399.9361022364217</property>
-                <property name="angle" type="double">0.0</property>
+                <property name="angle" type="double">180.0</property>
                 <property name="xscale" type="double">1825.3138530532854</property>
                 <property name="yscale" type="double">1825.3138530532854</property>
             </object>
@@ -58,7 +58,7 @@
             <object class="org.opensourcephysics.media.core.ImageCoordSystem$FrameData">
                 <property name="xorigin" type="double">756.5495207667732</property>
                 <property name="yorigin" type="double">442.8753993610224</property>
-                <property name="angle" type="double">0.0</property>
+                <property name="angle" type="double">180.0</property>
                 <property name="xscale" type="double">1825.3138530532854</property>
                 <property name="yscale" type="double">1825.3138530532854</property>
             </object>
@@ -67,7 +67,7 @@
             <object class="org.opensourcephysics.media.core.ImageCoordSystem$FrameData">
                 <property name="xorigin" type="double">765.6913827655311</property>
                 <property name="yorigin" type="double">457.27454909819653</property>
-                <property name="angle" type="double">0.0</property>
+                <property name="angle" type="double">180.0</property>
                 <property name="xscale" type="double">1825.3138530532854</property>
                 <property name="yscale" type="double">1825.3138530532854</property>
             </object>
@@ -733,9 +733,9 @@
         </object>
         </property>
     </property>
-    <property name="selectedtrack" type="string">axes</property>
+    <property name="selectedtrack" type="string">mass A</property>
     <property name="dividers" type="array" class="[D">
-        <property name="array" type="string">{0.3749072011878248,1.0,1.0,0.19227913882702302}</property>
+        <property name="array" type="string">{0.41276911655530807,1.0,1.0,0.19227913882702302}</property>
     </property>
     <property name="views" type="array" class="[[Lorg.opensourcephysics.cabrillo.tracker.TView;">
         <property name="[0]" type="array" class="[Lorg.opensourcephysics.cabrillo.tracker.TView;">
@@ -748,8 +748,13 @@
                         <property name="track" type="string">mass A</property>
                         <property name="plot0" type="object">
                         <object class="org.opensourcephysics.cabrillo.tracker.TrackPlottingPanel">
-                            <property name="x_var" type="string">x</property>
-                            <property name="y_var" type="string">vx</property>
+                            <property name="x_var" type="string">t</property>
+                            <property name="y_var" type="string">x</property>
+                            <property name="scaled" type="boolean">true</property>
+                            <property name="xmin" type="double">0.5</property>
+                            <property name="xmax" type="double">3.462203320561941</property>
+                            <property name="ymin" type="double">-0.18</property>
+                            <property name="ymax" type="double">0.2</property>
                             <property name="lines" type="boolean">true</property>
                             <property name="points" type="boolean">true</property>
                         </object>
@@ -780,5 +785,280 @@
         <property name="stretch" type="int">1</property>
         <property name="stretch_acceleration" type="int">1</property>
     </object>
+    </property>
+    <property name="datatool_tabs" type="array" class="[Lorg.opensourcephysics.tools.DataToolTab;">
+        <property name="[0]" type="object">
+        <object class="org.opensourcephysics.tools.DataToolTab">
+            <property name="name" type="string">mass_A</property>
+            <property name="owner_name" type="string">mass A</property>
+            <property name="owned_columns" type="array" class="[[Ljava.lang.String;">
+                <property name="[0]" type="array" class="[Ljava.lang.String;">
+                    <property name="[0]" type="string">t</property>
+                    <property name="[1]" type="string">mass A</property>
+                    <property name="[2]" type="string">x</property>
+                </property>
+                <property name="[1]" type="array" class="[Ljava.lang.String;">
+                    <property name="[0]" type="string">v_{x}</property>
+                    <property name="[1]" type="string">mass A</property>
+                    <property name="[2]" type="string">v_{x}</property>
+                </property>
+                <property name="[2]" type="array" class="[Ljava.lang.String;">
+                    <property name="[0]" type="string">x</property>
+                    <property name="[1]" type="string">mass A</property>
+                    <property name="[2]" type="string">x</property>
+                </property>
+            </property>
+            <property name="editable" type="boolean">false</property>
+            <property name="data" type="object">
+            <object class="org.opensourcephysics.display.DatasetManager">
+                <property name="connected" type="boolean">false</property>
+                <property name="sorted" type="boolean">false</property>
+                <property name="maker_shape" type="int">2</property>
+                <property name="stride" type="int">1</property>
+                <property name="linked" type="boolean">false</property>
+                <property name="x_column_name" type="string">x</property>
+                <property name="y_column_name" type="string">y</property>
+                <property name="data_name" type="string"></property>
+                <property name="datasets" type="collection" class="java.util.ArrayList">
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.tools.DataColumn">
+                        <property name="points" type="array" class="[[D">
+                            <property name="array" type="string">{{0.0,0.5660477650063855},{1.0,0.5993366538952745},{2.0,0.6326255427841634},{3.0,0.6659144316730524},{4.0,0.6992033205619412},{5.0,0.73249220945083},{6.0,0.765781098339719},{7.0,0.7990699872286079},{8.0,0.8323588761174967},{9.0,0.8656477650063856},{10.0,0.8989366538952747},{11.0,0.9323588761174968},{12.0,0.9655144316730523},{13.0,0.9988810983397189},{14.0,1.0321366538952745},{15.0,1.0655144316730523},{16.0,1.0987477650063857},{17.0,1.131981098339719},{18.0,1.1652144316730524},{19.0,1.1985922094508301},{20.0,1.231969987228608},{21.0,1.2651255427841634},{22.0,1.2985033205619414},{23.0,1.3317588761174965},{24.0,1.3650144316730524},{25.0,1.3982699872286077},{26.0,1.4315255427841636},{27.0,1.4649588761174968},{28.0,1.4981588761174967},{29.0,1.531481098339719},{30.0,1.5648033205619414},{31.0,1.598003320561941},{32.0,1.6314477650063857},{33.0,1.6646477650063858},{34.0,1.6978477650063855},{35.0,1.7312255427841634},{36.0,1.7646033205619411},{37.0,1.7977477650063856},{38.0,1.8310810983397192},{39.0,1.8644144316730524},{40.0,1.8976255427841633},{41.0,1.9308366538952746},{42.0,1.964269987228608},{43.0,1.997569987228608},{44.0,2.030869987228608},{45.0,2.064058876117497},{46.0,2.097358876117497},{47.0,2.130658876117497},{48.0,2.1639588761174973},{49.0,2.1972588761174965},{50.0,2.2305588761174966},{51.0,2.263858876117497},{52.0,2.2971588761174973},{53.0,2.3304588761174974},{54.0,2.3637588761174966},{55.0,2.3969477650063853},{56.0,2.430347765006386},{57.0,2.4635588761174967},{58.0,2.4967699872286073},{59.0,2.5301033205619414},{60.0,2.5634366538952746},{61.0,2.5967699872286074},{62.0,2.629969987228608},{63.0,2.663347765006386},{64.0,2.6967255427841637},{65.0,2.729836653895275},{66.0,2.7632033205619417},{67.0,2.7965699872286085},{68.0,2.8297588761174968},{69.0,2.8631477650063855},{70.0,2.896358876117497},{71.0,2.9295699872286085},{72.0,2.9629477650063856},{73.0,2.996203320561942},{74.0,3.029458876117497},{75.0,3.0627144316730517},{76.0,3.0961033205619413},{77.0,3.129325542784164},{78.0,3.162547765006386},{79.0,3.1958922094508306},{80.0,3.2292366538952746},{81.0,3.2624699872286085},{82.0,3.295703320561941},{83.0,3.329047765006386},{84.0,3.3623922094508307},{85.0,3.3956255427841633},{86.0,3.4288588761174967},{87.0,3.462203320561941}}</property>
+                        </property>
+                        <property name="index" type="int">88</property>
+                        <property name="marker_shape" type="int">2</property>
+                        <property name="marker_size" type="int">2</property>
+                        <property name="sorted" type="boolean">false</property>
+                        <property name="connected" type="boolean">false</property>
+                        <property name="x_name" type="string">row</property>
+                        <property name="y_name" type="string">t</property>
+                        <property name="line_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="fill_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">100</property>
+                        </object>
+                        </property>
+                        <property name="edge_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="errorbar_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="datasetID" type="int">152135135</property>
+                        <property name="visible" type="array" class="[Z">
+                            <property name="array" type="string">{false,true}</property>
+                        </property>
+                    </object>
+                    </property>
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.tools.DataColumn">
+                        <property name="points" type="array" class="[[D">
+                            <property name="array" type="string">{{0.0,0.18275518386761538},{1.0,0.18389001735458668},{2.0,0.182748168560659},{3.0,0.18153420744690746},{4.0,0.176581636259733},{5.0,0.17945199543917126},{6.0,0.16691178896666028},{7.0,0.14715705239171772},{8.0,0.105514777379273},{9.0,0.06564620102320234},{10.0,0.012322271450429967},{11.0,-0.03808702084678334},{12.0,-0.07393362870257936},{13.0,-0.11762168202683088},{14.0,-0.13890560544120978},{15.0,-0.15234808338713335},{16.0,-0.1590693223600952},{17.0,-0.1635501483420697},{18.0,-0.16579056133305692},{19.0,-0.16803097432404424},{20.0,-0.1635501483420697},{21.0,-0.16803097432404424},{22.0,-0.15682890936910787},{23.0,-0.14898746390065254},{24.0,-0.13218436646824805},{25.0,-0.10978023655837554},{26.0,-0.07729424818906028},{27.0,-0.03472640136030242},{28.0,0.01423066062032291},{29.0,0.04653119424272062},{30.0,0.08725795402748299},{31.0,0.11237690423564167},{32.0,0.14033773752125428},{33.0,0.1558356955830139},{34.0,0.16456122570549764},{35.0,0.17689166849700255},{36.0,0.17759124894566394},{37.0,0.17559099188154648},{38.0,0.16850668167749275},{39.0,0.15578448968080866},{40.0,0.13079345586636687},{41.0,0.10691914840633376},{42.0,0.07883172786511838},{43.0,0.042318081161538346},{44.0,0.011202064954936308},{45.0,-0.03024557537832795},{46.0,-0.06609218323412397},{47.0,-0.10619063698664344},{48.0,-0.12937823797252257},{49.0,-0.14834991150642374},{50.0,-0.14674705090966522},{51.0,-0.15570870287361427},{52.0,-0.1590693223600952},{53.0,-0.1590693223600952},{54.0,-0.15346828988262695},{55.0,-0.14786725740515894},{56.0,-0.13890560544120978},{57.0,-0.1221025080088054},{58.0,-0.1008185845944265},{59.0,-0.07617404169356667},{60.0,-0.04928908580171959},{61.0,-0.01291492578872705},{62.0,0.02293168206706908},{63.0,0.05186355799531389},{64.0,0.07908085295346107},{65.0,0.10069255832901858},{66.0,0.11333189757256551},{67.0,0.12456686578905163},{68.0,0.12456686578905163},{69.0,0.12316249476199087},{70.0,0.12035375270786935},{71.0,0.11052315551844394},{72.0,0.09928818730195776},{73.0,0.08858356821029323},{74.0,0.06277454059837773},{75.0,0.034133747022005334},{76.0,0.009489204121145511},{77.0,-0.020756371257182438},{78.0,-0.045400914158042316},{79.0,-0.07228587004988934},{80.0,-0.09468999995976196},{81.0,-0.10925268440117913},{82.0,-0.11709412986963447},{83.0,-0.1238153688425962},{84.0,-0.13053660781555804},{85.0,-0.13165681431105164},{86.0,-0.13165681431105164},{87.0,-0.12157495585160899}}</property>
+                        </property>
+                        <property name="index" type="int">88</property>
+                        <property name="marker_shape" type="int">2</property>
+                        <property name="marker_size" type="int">2</property>
+                        <property name="sorted" type="boolean">false</property>
+                        <property name="connected" type="boolean">true</property>
+                        <property name="x_name" type="string">row</property>
+                        <property name="y_name" type="string">x</property>
+                        <property name="line_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="fill_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">100</property>
+                        </object>
+                        </property>
+                        <property name="edge_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="errorbar_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="datasetID" type="int">152135135</property>
+                        <property name="visible" type="array" class="[Z">
+                            <property name="array" type="string">{false,true}</property>
+                        </property>
+                    </object>
+                    </property>
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.tools.DataColumn">
+                        <property name="points" type="array" class="[[D">
+                            <property name="array" type="string">{{0.0,NaN},{1.0,-1.053700978092921E-4},{2.0,-0.035384327718813516},{3.0,-0.0926214798203172},{4.0,-0.031274879955984144},{5.0,-0.14524136454882255},{6.0,-0.48507090692103066},{7.0,-0.9221847534821194},{8.0,-1.2242951640798372},{9.0,-1.3997539275026456},{10.0,-1.5549616869251677},{11.0,-1.2955659235265107},{12.0,-1.195610406915699},{13.0,-0.9752298042823093},{14.0,-0.5211565987038904},{15.0,-0.30270801045866336},{16.0,-0.16853658407627406},{17.0,-0.10112195044576443},{18.0,-0.06726844676859185},{19.0,0.03356144626978261},{20.0,-0.0},{21.0,0.10102062584611937},{22.0,0.28579555412794},{23.0,0.3705327198592367},{24.0,0.5894838725033283},{25.0,0.8252774215046593},{26.0,1.1254323838431477},{27.0,1.3735604123469265},{28.0,1.2215105402158135},{29.0,1.0957746593271718},{30.0,0.9898302821718563},{31.0,0.7964622398198445},{32.0,0.6520992366227881},{33.0,0.36481156903981077},{34.0,0.3162612754103773},{35.0,0.19519009514230448},{36.0,-0.019552513010029544},{37.0,-0.1366557001730574},{38.0,-0.2970975330110663},{39.0,-0.5667374057440883},{40.0,-0.735677603663892},{41.0,-0.7796858152904872},{42.0,-0.96804796071122},{43.0,-1.0154604040567914},{44.0,-1.0913651551784678},{45.0,-1.1625137595279729},{46.0,-1.140316240365094},{47.0,-0.9502410621381141},{48.0,-0.6330221399366486},{49.0,-0.26079298704418613},{50.0,-0.11049236287072889},{51.0,-0.18501909084729334},{52.0,-0.05045975204926455},{53.0,0.0840995867487741},{54.0,0.1684802550040585},{55.0,0.21869541126773404},{56.0,0.3867935689194},{57.0,0.5734078079977499},{58.0,0.6901923473654134},{59.0,0.7729424818905968},{60.0,0.9488867385726041},{61.0,1.0854824829978225},{62.0,0.9729745561688242},{63.0,0.8411160751956194},{64.0,0.7343933873718955},{65.0,0.5152254747984935},{66.0,0.35775685504544996},{67.0,0.16880586635789036},{68.0,-0.021093690326346726},{69.0,-0.06325995617390771},{70.0,-0.19028781062549502},{71.0,-0.31635255907426185},{72.0,-0.32925843884168154},{73.0,-0.5489856671102867},{74.0,-0.8186575187013042},{75.0,-0.7995465626793803},{76.0,-0.8240384729152309},{77.0,-0.8261054590513213},{78.0,-0.7741036373466244},{79.0,-0.7390899237178904},{80.0,-0.5552425386542191},{81.0,-0.33707316815254545},{82.0,-0.21873190916681204},{83.0,-0.20156997919578662},{84.0,-0.11777872032059314},{85.0,-0.016853658407627575},{86.0,0.15142978326933113},{87.0,NaN}}</property>
+                        </property>
+                        <property name="index" type="int">88</property>
+                        <property name="marker_shape" type="int">2</property>
+                        <property name="marker_size" type="int">2</property>
+                        <property name="sorted" type="boolean">false</property>
+                        <property name="connected" type="boolean">true</property>
+                        <property name="x_name" type="string">row</property>
+                        <property name="y_name" type="string">v_{x}</property>
+                        <property name="line_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="fill_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">100</property>
+                        </object>
+                        </property>
+                        <property name="edge_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="errorbar_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="datasetID" type="int">1884323071</property>
+                        <property name="visible" type="array" class="[Z">
+                            <property name="array" type="string">{false,true}</property>
+                        </property>
+                    </object>
+                    </property>
+                </property>
+                <property name="id" type="int">1550084482</property>
+            </object>
+            </property>
+            <property name="fits" type="collection" class="java.util.ArrayList">
+                <property name="item" type="object">
+                <object class="org.opensourcephysics.tools.FitFunctionPanel">
+                    <property name="name" type="string">Poly1</property>
+                    <property name="description" type="string">y = A*x + B</property>
+                    <property name="user_parameters" type="array" class="[Lorg.opensourcephysics.tools.Parameter;">
+                        <property name="[0]" type="object">
+                        <object class="org.opensourcephysics.tools.Parameter">
+                            <property name="name" type="string">A</property>
+                            <property name="function" type="string">0.0</property>
+                            <property name="editable" type="boolean">true</property>
+                            <property name="name_editable" type="boolean">true</property>
+                            <property name="description" type="string">Slope</property>
+                        </object>
+                        </property>
+                        <property name="[1]" type="object">
+                        <object class="org.opensourcephysics.tools.Parameter">
+                            <property name="name" type="string">B</property>
+                            <property name="function" type="string">0.0</property>
+                            <property name="editable" type="boolean">true</property>
+                            <property name="name_editable" type="boolean">true</property>
+                            <property name="description" type="string">Vertical intercept</property>
+                        </object>
+                        </property>
+                    </property>
+                    <property name="function_editor" type="object">
+                    <object class="org.opensourcephysics.tools.UserFunctionEditor">
+                        <property name="main_functions" type="array" class="[Lorg.opensourcephysics.tools.UserFunction;">
+                            <property name="[0]" type="object">
+                            <object class="org.opensourcephysics.tools.UserFunction">
+                                <property name="name" type="string">Poly1</property>
+                                <property name="description" type="string">Polynomial, degree 1</property>
+                                <property name="name_editable" type="boolean">true</property>
+                                <property name="parameter_names" type="array" class="[Ljava.lang.String;">
+                                    <property name="[0]" type="string">A</property>
+                                    <property name="[1]" type="string">B</property>
+                                </property>
+                                <property name="parameter_values" type="array" class="[D">
+                                    <property name="array" type="string">{0.0,0.0}</property>
+                                </property>
+                                <property name="parameter_descriptions" type="array" class="[Ljava.lang.String;">
+                                    <property name="[0]" type="string">Slope</property>
+                                    <property name="[1]" type="string">Vertical intercept</property>
+                                </property>
+                                <property name="variables" type="array" class="[Ljava.lang.String;">
+                                    <property name="[0]" type="string">x</property>
+                                </property>
+                                <property name="expression" type="string">A*x + B</property>
+                                <property name="polynomial" type="array" class="[D">
+                                    <property name="array" type="string">{-0.10949372798456321,-0.23987642154201852}</property>
+                                </property>
+                            </object>
+                            </property>
+                        </property>
+                    </object>
+                    </property>
+                    <property name="original_name" type="string">Poly1</property>
+                </object>
+                </property>
+            </property>
+            <property name="selected_fit" type="string">Poly1</property>
+            <property name="autofit" type="boolean">true</property>
+            <property name="fit_parameters" type="array" class="[D">
+                <property name="array" type="string">{-0.23987642154201852,-0.10949372798456321}</property>
+            </property>
+            <property name="fit_color" type="object">
+            <object class="java.awt.Color">
+                <property name="red" type="int">255</property>
+                <property name="green" type="int">0</property>
+                <property name="blue" type="int">255</property>
+                <property name="alpha" type="int">255</property>
+            </object>
+            </property>
+            <property name="fit_visible" type="boolean">true</property>
+            <property name="props_visible" type="boolean">true</property>
+            <property name="stats_visible" type="boolean">false</property>
+            <property name="split_pane" type="int">528</property>
+            <property name="fit_split_pane" type="int">317</property>
+            <property name="column_order" type="array" class="[I">
+                <property name="array" type="string">{0,2,3,1}</property>
+            </property>
+            <property name="hidden_markers" type="array" class="[Ljava.lang.String;">
+                <property name="[0]" type="string">t</property>
+            </property>
+        </object>
+        </property>
     </property>
 </object>
