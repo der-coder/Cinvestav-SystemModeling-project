@@ -1,8 +1,9 @@
-\documentclass[journal, onecolumn]{IEEEtran}
+% \documentclass[conference, onecolumn]{IEEEtran}
+
+\documentclass[letterpaper, 12pt]{article}
 
 \usepackage{hyperref}
 
-\usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{algorithmic}
 \usepackage{graphicx}
@@ -10,6 +11,10 @@
 \usepackage{xcolor}
 \usepackage[spanish,mexico]{babel}
 
+\usepackage{biblatex}
+\addbibresource{bibliografia.bib}
+
+\usepackage{float}
 \usepackage{import}
 \usepackage{xifthen}
 \usepackage{pdfpages}
@@ -17,42 +22,22 @@
 \usepackage[center]{caption}
 \usepackage{bm}
 
-
-
-\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
-    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
-    
-    \DeclareRobustCommand{\uvec}[1]{{%
-  \ifcat\relax\noexpand#1%
-    % it should be a Greek letter
-    \bm{\hat{#1}}%
-  \else
-    \ifcsname uvec#1\endcsname
-      \csname uvec#1\endcsname
-    \else
-      \bm{\hat{\mathbf{#1}}}%
-     \fi
-   \fi
-}}
-    
 \begin{document}
 
 \title{
-Péndulo Simple - Análisis, simulación y construcción\\
+Péndulo Simple\\
+Análisis, simulación y construcción\\
 }
 
 
 \author{
-    \IEEEauthorblockN{
     Enrique Benavides Téllez, Isaac Ayala Lozano,\\ 
-    Sandy Natalie Campos Martínez, Luis Gerardo Almanza Granados\\
-    y Yair Casas Flores\\
-    }
-    \IEEEauthorblockA{
-    \textit{Robótica y Manufactura Avanzada} \\
-    \textit{CINVESTAV}\\
-        Ramos Arizpe, México}
+    Sandy Natalie Campos Martínez,\\
+    Luis Gerardo Almanza Granados\\
+    y Yair Casas Flores
 }
+
+\date{}
 
 \maketitle
 
@@ -92,8 +77,6 @@ kit de LEGO Mindstorm.
 \input{./tex/resultados}
 \input{./tex/conclusiones}
 
-% here \cite{susskind}.% Just a citation here to make sure Bibtex works.
-
-\bibliographystyle{IEEEtran}
-\bibliography{bibliografia}
+% \bibliographystyle{IEEEtran}
+\printbibliography{}
 \end{document}

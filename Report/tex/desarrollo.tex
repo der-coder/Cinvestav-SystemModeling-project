@@ -1,18 +1,27 @@
 \section{Modelo Matemático}
 
-La posición del objeto ($m$) respecto a un marco de referencia no inercial
-ubicado en el punto de rotación del péndulo puede ser descrita como un par
-de coordenadas $\{x, y\}$ para un plano cartesiano. Estas coordenadas pueden
-ser expresadas también como funciones que dependen de la posición angular 
-($\theta$) del objeto con respecto al eje vertical del plano cartesiano y el
-tiempo ($t$).
+Para descrbir al sistema es necesario obtener las ecuaciones 
+de movimiento del péndulo simple. 
+Estas ecuaciones permiten 
+determinar su estado para cualquier 
+instante de tiempo, tomando en cuenta las condiciones 
+iniciales del mismo. 
+La posición del péndulo simple se refiere a 
+las coordenadas  $\{x, y\} \in R^2$  medidas respecto a un marco 
+referencial inercial\footnote{Se define como marco 
+referencial inercial a todo marco referencial que no 
+experimente aceleraciones.} 
+que determinan la ubicación de 
+la masa puntual \emph{m} en el espacio.
+La posición del péndulo se restringe a ser bidimensional
+ya que se asume que el movimiento del sistema está restringido a un plano
+cuya coordenada \emph{z} es cero.
 
 Se emplean dos metodologías para obtener las ecuaciones para las coordenadas 
 $\{x, y\}$ del sistema:
 \begin{itemize}
- \item Balance de fuerzas del sistema empleando las leyes de 
- movimiento de Newton
- \item Conservación de energía mediante la ecuación de Euler-Lagrange
+ \item Mecánica Newtoniana. Utilizando el método de balanceo de fuerzas.
+ \item Mecánica Lagrangiana. Basada en la ecuación de Euler-Lagrange.
 \end{itemize}
 
 
@@ -21,8 +30,22 @@ $\{x, y\}$ del sistema:
 %  Newton's Laws of Motion
 % ---------------------------
 
-\subsection{Leyes de movimiento de Newton}
+\subsection{Mecánica Newtoniana}
 
+Las coordenadas del sistema pueden ser expresadas como funciones
+de la siguiente manera:
+
+\begin{equation}
+ \begin{pmatrix}
+ x(\theta)\\
+ y(\theta)
+ \end{pmatrix}
+ = \begin{pmatrix}
+ l \sin (\theta)\\
+ l \cos (\theta)
+ \end{pmatrix}
+ \label{eq: system coordinates}
+\end{equation}
 
 Empleando las leyes de movimiento de Newton, 
 se establece que la aceleración ($\bold{a}$) que el objeto
@@ -37,14 +60,6 @@ para el caso de un péndulo simple
 hay dos vectores de fuerza presentes en el sistema:
 la fuerza de gravedad ($\bold{F}_{mg} = m\bold{g}$) que actúa paralelo al eje vertical 
 y la fuerza de fricción ($\bold{F}_f = kl\dot{\theta}$) que se opone al movimiento del objeto. 
-
-
- \begin{figure}[ht]
-    \centering
-    \import{./img/}{pendulum_forces.pdf_tex}
-    \caption{Diagrama de fuerzas.}
-    \label{fig: pendulum forces}
-\end{figure}
 
 Debido al movimiento circular que el péndulo experimenta,
 es preferible expresar el efecto combinado
@@ -99,120 +114,121 @@ Se resuelve \eqref{eq: sum of moments magnitude} para $\ddot{\theta}$
  &= - mgl \sin(\theta) + kl^2 \dot{\theta}\\
  \ddot{\theta} &= - \dfrac{g}{l} \sin(\theta) + \dfrac{k}{m} \dot{\theta}
 \end{split}
- \label{eq: angular acceleraton newton}
+ \label{eq: angular acceleration newton}
 \end{equation}
 
 
-\subsection{Conservación de energía | Euler-Lagrange}
+\subsection{Mecánica Lagrangiana}
 
-% El método de conservación de energía del sistema se sustenta
-% en la ecuación de Euler-Lagrange, la cual describe que para un
-% sistema dado la energía total del sistema permanece constante.
-% 
-% \begin{equation}
-%  \dfrac{d}{dt} \dfrac{\partial L}{\partial \dot{q}} - 
-%  \dfrac{\partial L}{\partial q} = 0
-%  \label{eq: euler lagrange equation}
-% \end{equation}
-% 
-% 
-% Por este método se necesitan desarrollar las ecuaciones de energía del péndulo. Y para desarrollar las ecuaciones de posición asignamos el marco de referencia del péndulo y se obtiene:\\
-% \begin{equation}
-% \left(\begin{matrix}
-% x\\
-% y
-% \end{matrix}\right) = 
-% \begin{bmatrix}
-% l\sen(\theta)\\
-% l(1 - \cos(\theta)
-% \end{bmatrix}
-% \end{equation}
-% 
-% 
-% El Lagrangiano $L$ del sistema relaciona la energía cinética $T$ 
-% del péndulo con el potencial de energía $V$ en el sistema.
-% 
-% \begin{equation*}
-% \begin{split}
-%  T &= \dfrac{1}{2} m v^2\\
-%  &= \dfrac{1}{2} m (l\dot{\theta})^2\\
-%  &= \dfrac{1}{2} m l^2 \dot{\theta}^2\\
-% \end{split}
-% \label{eq: kinetic energy}
-% \end{equation*}
-% 
-% \begin{equation*}
-%  V = m g l \left( 1 - \cos{\theta} \right)
-%  \label{eq: potential energy}
-% \end{equation*}
-% 
-% Recordando la ecuación para el Lagrangiano $L = T - V$ se obtienen las 
-% derivadas parciales del mismo, considerando que $q = \theta$.
-% 
-% \begin{equation}
-%  \begin{split}
-%   L & = \dfrac{1}{2}m l^2 \dot{\theta}^2 - m g l (1 - \cos{\theta})\\
-%   \dfrac{\partial L}{\partial \theta} &= - m g l \sin{\theta} \\
-%   \dfrac{\partial L}{\partial \dot{\theta}} &=\\
-%   \dfrac{d}{dt}\dfrac{\partial L}{\partial \dot{\theta}} &=\\
-%  \end{split}
-% \end{equation}
-% 
-% \begin{flushleft}
-% {\large Energía Cinética}
-% \end{flushleft}
-% \begin{equation} \label{T_equ}
-% T = \frac{1}{2}mv^2 = \frac{1}{2}m(\dot{x}^2 + \dot{y}^2) 
-% \end{equation}
-% Derivando las ecuaciones de posición del péndulo obtenemos las ecuaciones de velocidad:
-% \begin{equation} \label{Vel_p}
-% \left(\begin{matrix}
-% \dot{x}\\
-% \dot{y}
-% \end{matrix}\right) = 
-% \begin{bmatrix}
-% l\dot{\theta}\cos(\theta)\\
-% l\dot{\theta}\sen(\theta)
-% \end{bmatrix}
-% \end{equation}
-% Sustituyendo la ecuación \ref{Vel_p} en \ref{T_equ} y desarrollando se obtiene:
-% \begin{equation}
-% T = \frac{1}{2}ml^2\dot{\theta}^2
-% \end{equation}
-% \begin{flushleft}
-% {\large Energía Potencial}
-% \end{flushleft}
-% La energía potencial se plantea multiplicando la posición en el \emph{eje y} del péndulo por la masa y gravedad. Se plantea de la siguiente manera:
-% \begin{equation} \label{V_equ}
-% V = mgl(1-\cos \theta)
-% \end{equation}
-% Con estas ecuaciones se puede definir el Lagrangiano el cual es el que va a ser diferenciado por medio de la ecuación \ref{L_equ}. El Lagrangiano se define como:
-% 
-% \begin{large}
-% \begin{align*}
-% L = T - V = \frac{1}{2}m(l\theta)^2 \\
-% = \frac{1}{2}ml^2\dot{\theta}^2 - mgl(1-\cos \theta)
-% \end{align*}
-% \end{large}
-% 
-% \begin{large}
-% \begin{equation*}
-% \dfrac{d}{dt} \dfrac{\partial L}{\partial \dot{\theta}} = \dfrac{d}{dt} ml^2\dot{\theta}
-% \end{equation*}
-% \end{large}
-% \begin{large}
-% \begin{equation} \label{dLv_equ}
-% \dfrac{d}{dt} ml^2\dot{\theta} = ml^2\ddot{\theta}
-% \end{equation}
-% \end{large}
-% \begin{large}
-% \begin{equation} \label{dLp_equ}
-% \dfrac{\partial L}{\partial\theta} = -gl\sin(\theta)
-% \end{equation}
-% \end{large}
-% Al unir la ecuación \ref{dLv_equ} menos la ecuación \ref{dLp_equ}, en base a la diferenciación del Lagrangiano (ecuación \ref{L_equ}), se obtiene la ecuación de movimiento del sistema.
-% \begin{large}
-% \begin{equation}
-% ml^2\ddot{\theta} + gl\sin(\theta) = 0
-% \end{equation}
-% \end{large}
+El método de conservación de energía del sistema se sustenta
+en la ecuación de Euler-Lagrange \eqref{eq: euler lagrange equation}, 
+la cual describe que para un sistema dado la 
+energía total del sistema permanece constante.
+Es imperativo obtener las ecuaciones de energía del péndulo
+para poder determinar las ecuaciones de movimiento del sistema.
+
+Se establece un marco de referencia inercial en la ubicación de
+la masa puntual en la que la posición angular del mismo sea cero.
+Con este marco refencial, las coordenadas de posición se expresan
+así: 
+
+\begin{equation}
+\begin{pmatrix}
+x(\theta)\\
+y(\theta)
+\end{pmatrix}
+= 
+\begin{pmatrix}
+l\sen(\theta)\\
+l(1 - \cos(\theta)
+\end{pmatrix}
+\label{eq: lagrange position coordinates}
+\end{equation}
+
+
+Retomando la función del Lagrangiano \eqref{eq: lagrangian}, 
+es necesario definir la energía potencial del sistema.
+Para el caso del péndulo simple que se está analizando, 
+la energía potencial del sistema se expresa de la siguiente manera.
+
+\begin{equation}
+ V(\theta) = m g l ( 1 - \cos (\theta) )
+ \label{V_equ}
+\end{equation}
+
+Para el péndulo simple, la ecuación de energía cinética considera
+la velocidad en ambos ejes.
+
+\begin{equation} 
+T = \frac{1}{2}m(\dot{x}^2 + \dot{y}^2) 
+\label{T_equ}
+\end{equation}
+
+Se obtienen expresiones para la primer derivada respecto al tiempo de 
+las coordenadas $\{x, y\}$ en función de $\theta$.
+
+\begin{equation} 
+\begin{pmatrix}
+\dot{x}\\
+\dot{y}
+\end{pmatrix}
+= 
+\begin{pmatrix}
+l\dot{\theta}\cos(\theta)\\
+l\dot{\theta}\sen(\theta)
+\end{pmatrix}
+\label{Vel_p}
+\end{equation}
+
+
+Sustituyendo la ecuación \ref{Vel_p} en \ref{T_equ}, 
+se plantea la ecuación de la energía cinética en función de $\theta$.
+
+\begin{equation}
+T = \frac{1}{2}ml^2\dot{\theta}^2
+\end{equation}
+
+
+Se designa a $\theta$ como la coordenada generalizada $q$ del sistema y
+se plantea la función del Lagrangiano.
+
+
+\begin{equation}
+   L = \dfrac{1}{2}m l^2 \dot{\theta}^2 - m g l (1 - \cos{\theta})\\
+ \label{eq: pendulum lagrangian}
+\end{equation}
+
+Se obtienen las derivadas parciales del Lagrangiano para la ecuación de 
+Euler-Lagrange.
+
+\begin{equation}
+\begin{split}
+  \dfrac{\partial L}{\partial \theta} &= - m g l \sin{\theta} \\
+  \dfrac{\partial L}{\partial \dot{\theta}} &= m l ^2 \dot{\theta}\\
+  \dfrac{d}{dt}\dfrac{\partial L}{\partial \dot{\theta}} &= ml^2\ddot{\theta}\\
+  \end{split}
+ \label{eq: partial derivatives lagrangian}
+\end{equation}
+
+
+Substiyendo \eqref{eq: partial derivatives lagrangian} 
+en \eqref{eq: euler lagrange equation}
+se obtiene la ecuación de Euler-Lagrange para el sistema.
+
+\begin{equation}
+ ml^2\ddot{\theta} + m g l \sin(\theta) = 0
+ \label{eq: euler lagrange pendulum}
+\end{equation}
+
+Se resuelve \eqref{eq: euler lagrange pendulum} para $\ddot{\theta}$.
+
+\begin{equation}
+ \ddot{\theta} = - \dfrac{g}{l} \sin (\theta)
+ \label{eq: angular acceleration lagrange}
+\end{equation}
+
+
+Nótese que para el caso sin fricción ($k = 0$), las ecuaciones 
+\eqref{eq: angular acceleration newton} y 
+\eqref{eq: angular acceleration lagrange}
+son idénticas.
