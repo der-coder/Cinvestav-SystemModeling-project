@@ -1,34 +1,27 @@
 \section{Introducción}
 
-El péndulo simple (referido solamente como péndulo) es uno 
-de los sistemas no lineares más estudiados por la 
-comunidad científica y académica. La proliferación de su
-uso como sistema base para evaluar estrategias de control ha
-permitido desarrollar un conocimiento detallado del sistema.
+El péndulo simple ha sido uno de los mecanismos más estudiados 
+por la comunidad científica a lo largo del tiempo, 
+y sus aplicaciones han sido vastas. 
+Galileo Galilei describió el comportamiento de
+este mecanismo en 1602 \cite{drake2003galileo}, 
+llegando a la conclusión de que el movimiento del mismo es 
+\emph{isócrono}.
+Quizás la aplicación más importante del péndulo simple ha sido
+la invención del físico y matemático Christian Huygens: el reloj
+de péndulo.
+Inventado en 1656 y patentado en 1657 \cite{bennet2002huygenclock}, 
+el reloj de péndulo demostró ser el instrumento más preciso para
+la medición del tiempo hasta la construcción del reloj de
+cuarzo en 1927 en Bell Laboratories \cite{morrison1948quartzcrystalclock}.\\
 
-
-El péndulo se compone de una mínima cantidad de elementos:
-\begin{itemize}
- \item Un punto de rotación 
- \item Un objeto de masa $m$
- \item Un cuerpo rígido de longitud $l$ y masa despreciable que conecta el
- punto de rotación con el objeto de interés
-\end{itemize}
-
-La figura \ref{fig: simple pendulum} exhibe los componentes antes 
-mencionados.
-
-
- \begin{figure}[ht]
-    \centering
-    \import{./img/}{pendulum_diagram.pdf_tex}
-    \caption{Sistema de Péndulo simple.}
-    \label{fig: simple pendulum}
-\end{figure}
-
-Para describir el comportamiento del sistema es necesario desarrollar
-ecuaciones para detallar el movimiento y velocidad del cuerpo $m$.
-Este trabajo se limitará a determinar las ecuaciones para un péndulo
-cuyo movimiento está restringido a un plano sin la intervención de fuerzas
-externas.
-
+Es evidente que la comprensión detallada de este mecanismo
+ha dado lugar a avances científicos e invenciones importantes 
+a lo largo de la historia de la humanidad.
+Este trabajo pretende mostrar un análisis de dicho mecanismo
+empleando dos metodologías para su análisis.
+El trabajo se enfoca en tres áreas de interés para el estudio
+del péndulo simple: el modelo matemático del sistema, 
+la simulación del modelo matemático empleando 
+herramientas computacionales y una implementación
+física del mecanismo.

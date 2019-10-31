@@ -1,0 +1,191 @@
+\section{Marco Teórico}
+
+\subsection{Péndulo simple}
+
+Para su estudio, el péndulo simple se describe como una masa 
+\emph{m} concentrada en un punto \cite{sastry2013nonlinear} 
+que se encuentra suspendida mediante un elemento de masa 
+despreciable y de longitud \emph{l} que la conecta a un 
+punto de pivoteo.
+Para el trabajo presentado, las fuerzas que actúan
+sobre dicha masa se restringen a la fuerza de gravedad $F_{mg}$, 
+la cual induce el movimiento del cuerpo, y una
+fuerza de fricción viscosa $F_f$, la cual amortigua el sistema
+y lo lleva al reposo después de un tiempo dado.\\
+
+La representación del péndulo simple puede ser observada en la
+figura \ref{fig: simple pendulum}. 
+La posición angular $\theta$ de la masa es medida 
+respecto a la vertical del sistema.
+A su vez, la figura \ref{fig: pendulum forces} presenta las fuerzas que
+actúan sobre la masa.
+
+\begin{figure}[ht]
+    \centering
+    \import{./img/}{pendulum_diagram.pdf_tex}
+    \caption{Sistema de Péndulo simple.}
+    \label{fig: simple pendulum}
+\end{figure}
+
+ \begin{figure}[ht]
+    \centering
+    \import{./img/}{pendulum_forces.pdf_tex}
+    \caption{Diagrama de fuerzas.}
+    \label{fig: pendulum forces}
+\end{figure}
+
+
+\subsection{Leyes de movimiento de Newton}
+% https://en.wikisource.org/wiki/The_Mathematical_Principles_of_Natural_Philosophy_(1729)
+
+Sir Isaac Newton establece en su obra \emph{Principia Mathematica} 
+las tres leyes que fungen como el cimiento de la mecánica clásica 
+\cite{newton1803mathematical, díaz20183d}. 
+A continuación se presentan las leyes mencionadas.
+
+\begin{enumerate}
+ \item Un cuerpo mantiene su estatus quo, 
+ respecto a un marco referencial inercial, salvo
+ que una fuerza externa actúe sobre éste.\\
+ 
+ La preservación del estatus quo de un cuerpo establece
+ que la tasa de cambio de la velocidad $\bold{v}$ 
+ del cuerpo es cero.
+ 
+ \begin{equation}
+  \sum \bold{F} = 0 \iff \dfrac{d \bold{v}}{dt} = 0
+  \label{eq: 1st law of motion}
+ \end{equation}
+
+ \item La tasa de cambio de la cantidad de movimiento 
+ (momentum) $\bold{p}$ de un cuerpo
+ es directamente proporcional a la fuerza aplicada.
+ \begin{equation}
+  \bold{F} = \dfrac{d \bold{p}}{dt}
+  \label{eq: 2nd law of motion}
+ \end{equation}
+ 
+ La cantidad de movimiento de un cuerpo se define como el 
+ producto de la masa del cuerpo y el vector de velocidad 
+ del mismo ($\bold{p} = m \bold{v}$). 
+ Con esta definición es posible expresar 
+ \eqref{eq: 2nd law of motion} de la siguiente manera.
+ 
+ \begin{equation}
+  \begin{split}
+   \bold{F} &= \dfrac{d (m\bold{v})}{dt}\\
+   &= m \bold{a}
+  \end{split}
+  \label{eq: conservation of linear momentum}
+ \end{equation}
+
+
+ \item El efecto mutuo de dos cuerpos que actúan 
+ uno sobre el otro es siempre igual y en direcciones contrarias.
+ \begin{equation}
+  \bold{F}_{a/b} = -\bold{F}_{b/a}
+  \label{eq: 3rd law of motion}
+ \end{equation}
+
+\end{enumerate}
+
+
+Las leyes de Newton pueden ser aplicadas tanto a 
+movimientos lineales como movimientos rotacionales.
+Para el caso de la segunda ley de Newton, 
+es posible extender el concepto de tasa de cambio
+de la cantidad de movimiento del cuerpo 
+a la tasa de cambio del momento angular $\bold{L}$
+del cuerpo.
+Para esta nueva expresión, el momento angular se relaciona
+con el efecto que tiene el torque $\boldsymbol{\tau}$
+que genera la fuerza sobre el cuerpo en cuestión.
+
+\begin{equation}
+  \sum \boldsymbol{\tau} = \dfrac{d \bold{L}}{dt}
+  \label{eq: conservation of angular momentum}
+\end{equation}
+
+Considerando que el momento angular para una partícula
+se define como el producto del momento de inercia 
+y la velocidad angular
+($\bold{L} = I \boldsymbol{\omega}$), es posible 
+expresar a \eqref{eq: conservation of angular momentum}
+de la siguiente manera:
+
+\begin{equation}
+ \begin{split}
+  \sum \boldsymbol{\tau} &= \dfrac{d (I \boldsymbol{\omega})}{dt} \\
+  &= I \boldsymbol{\alpha}
+ \end{split}
+ \label{eq: angular momentum and torque}
+\end{equation}
+
+\subsection{Energía}
+
+Para una partícula solamente se consideran dos tipos de 
+energía \cite{susskind2014theoretical}: la energía cinética,
+relacionada con el movimiento de la partícula, y la 
+energía potencial, que es una función que depende de la 
+posición de la partícula en el espacio.
+
+\begin{itemize}
+ \item Energía cinética.\\
+ De acuerdo a \cite{díaz20183d}, 
+ la energía cinética de una partícula se expresa de 
+ la siguiente manera: 
+ \begin{equation}
+  T = \dfrac{1}{2} m ||\bold{v}||^2
+  \label{eq: kinetic energy}
+ \end{equation}
+
+ 
+ \item Energía potencial.\\
+ La energía potencial de la partícula es una función 
+ que depende de la posición de partícula, los detalles de esta 
+ ecuación se presentarán en el desarrollo matemático
+ del modelo.
+ \begin{equation}
+    V = V(x)
+  \label{eq: potential energy}
+ \end{equation}
+
+\end{itemize}
+
+\subsection{Mecánica Lagrangiana}
+
+La mecánica Lagrangiana es un replanteamiento de la 
+mecánica clásica Newtoniana, haciendo uso
+de \emph{coordenadas generalizadas}
+$\bold{q} = 
+\begin{pmatrix}
+q_1 & q_2 &\cdots & q_i
+\end{pmatrix}^T
+$ para describir un sistema.
+Para sistemas como el péndulo simple, su uso simplifica el
+desarrollo matemático del mismo.\\
+
+Se introduce el concepto del \emph{Lagrangiano} $\mathcal{L}$,
+que es una ecuación que describe la dinámica del sistema en 
+función de la energía.
+
+\begin{equation}
+ \mathcal{L} = T - V(x)
+ \label{eq: lagrangian}
+\end{equation}
+
+Se plantea la ecuación de Euler-Lagrange, 
+que para el cálculo de variaciones permite determinar
+puntos estacionarios para la ecuación funcional del sistema.
+Esto permite minimizar la acción $\mathcal{A}$ del sistema.
+
+\begin{equation}
+ \dfrac{d}{dt} \dfrac{\partial \mathcal{L}}{\partial \dot{q}} - 
+ \dfrac{\partial \mathcal{L}}{\partial q} = 0
+ \label{eq: euler lagrange equation}
+\end{equation}
+
+
+
+
+%  Euler-Lagrange equation
