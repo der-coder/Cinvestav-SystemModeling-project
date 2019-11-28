@@ -6,8 +6,8 @@ close all
 
 %% Variables para ODE45
 
-l = 0.3;        % Largo del pendulo (m)
-m = 0.12166;    % Masa de la bola (kg)
+l = 0.193;        % Largo del pendulo (m)
+m = 0.1232109;    % Masa de la bola (kg)
 k = 0.1;        % Coeficiente de friccion 0.1
 theta = pi/2;
 
@@ -19,18 +19,18 @@ tspan = [0 15];
 figure(1)
 plot(t,thet(:,1),'k','linewidth',1,t,thet(:,2),'k--','linewidth',1)
 xlim([0 15])
+ylim([-12 12])
 xlabel('Tiempo','Interpreter','latex')
-ylabel('$\theta / \dot{\theta}$','Interpreter','latex')
+ylabel('$\theta, \dot{\theta}$','Interpreter','latex')
 legend({'  $\theta$','  $\dot{\theta}$'},'Interpreter','latex','location', 'northeast', 'orientation', 'horizontal')
 legend('boxoff')
-
-title('Posición/Velocidad péndulo')
+title('Posición y Velocidad del péndulo','Interpreter','latex')
 set(gcf,'Color',[1 1 1])
 ##grid on
 
 ##print('-dpdflatex', '../Report/img/PosVelNF.tex', '-S400,300');
 
-print('-dpdflatex', '../Report/img/PosVelF.tex', '-S300,250');
+print('-dpdflatex', '../Report/img/PosVelF.tex', '-S300,250', '-mono');
 
 figure(2)
 plot(thet(:,1),thet(:,2),'k','linewidth',1)
@@ -40,10 +40,10 @@ title('Retrato fase $\theta / \dot{\theta}$','Interpreter','latex')
 
 set(gcf,'Color',[1 1 1])
 ##grid on
-print('-dpdflatex', '../Report/img/faseF.tex', '-S300,200');
+print('-dpdflatex', '../Report/img/faseF.tex', '-S300,200', '-mono');
 
 
-%% Simulaci�n de pendulo
+%% Simulacion de pendulo
 X = l*sin(thet(:,1));
 Y = -l*cos(thet(:,1));
 

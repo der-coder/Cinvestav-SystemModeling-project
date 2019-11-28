@@ -12,8 +12,8 @@ y se incluye como anexo.
  \begin{center}
 \begin{tabular}{lc}
 \hline
-Longitud ($l$) & 0.3 [m] \\
-Masa ($m$) & 0.12166 [kg]\\
+Longitud ($l$) & 0.193 [m] \\
+Masa ($m$) & 0.1232109 [kg]\\
 Coeficiente de fricción ($k$) & $\{0,0.1\}$ [$N \cdot s / m$] \\
 Posición angular inicial ($\theta_0$) & $0.5\pi$ [rad] \\
 Velocidad angular inicial ($\dot{\theta}$) & 0 [rad/s] \\
@@ -96,4 +96,35 @@ del marco referencial.
  % fasependulox2.png: 1853x1003 px, 96dpi, 49.02x26.53 cm, bb=0 0 1390 752
 \caption{Diagrama de fase de $\theta(t)$ y $\dot{\theta}(t)$.}
  \label{fig: phase plot theta friction}
+\end{figure}
+
+\subsection{Hamiltoniano}
+
+La formulación Hamiltoniana del péndulo fue simulada con las mismas 
+condiciones que los modelos Newtonianos y Lagrangianos.
+Esta simulación no contempla fricción en el sistema, produciendo
+el comportamiento de un oscilador harmónico simple 
+(figura \ref{fig: phase plot theta hamiltonian}).
+El diagrama fase en la figura \ref{fig: phase plot theta hamiltonian}
+presenta un comportamiento similar a las otras simulaciones, observando
+que el momento $p_{\theta}$ es expresado como un coeficiente constante
+$m l ^2$ que altera la escala de la velocidad angular $\dot \theta$.
+
+
+\begin{figure}[htb!]
+ \centering 
+ \import{./img/}{PosVelHamilton.tex}
+%  \includegraphics[scale=0.3]{PosVelF.png}
+ % fasependulox2.png: 1853x1003 px, 96dpi, 49.02x26.53 cm, bb=0 0 1390 752
+ \caption{Comportamiento de $\theta(t)$ y $p_{\theta}$ en el tiempo.}
+ \label{fig: time plot theta ptheta hamiltonian}
+\end{figure}
+
+\begin{figure}[htb!]
+ \centering 
+ \import{./img/}{faseHamilton.tex}
+%  \includegraphics[scale=0.3]{faseF.png}
+ % fasependulox2.png: 1853x1003 px, 96dpi, 49.02x26.53 cm, bb=0 0 1390 752
+\caption{Diagrama de fase de $\theta(t)$ y $p_{\theta}$.}
+ \label{fig: phase plot theta hamiltonian}
 \end{figure}
