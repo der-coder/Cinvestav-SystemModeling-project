@@ -33,6 +33,7 @@
   \usetheme{Berlin}
   \setbeamercovered{transparent}
   \setbeamertemplate{caption}[numbered]
+  \setbeamertemplate{footline}[frame number]
 }
 
 
@@ -46,7 +47,7 @@
 \subtitle
 {Modelado, simulación y resultados}
 
-\author[Equipo 1]{E. Benavides \and I. Ayala \and S. Campos \\ \and L. Almazán \and Y. Casas}
+\author[Equipo 1]{E. Benavides \and I. Ayala \and S. Campos \\ \and L. Almanza \and Y. Casas}
 
 
 \institute[]
@@ -105,9 +106,9 @@
 \begin{frame}{Objetivos del proyecto}
 
   \begin{itemize}
-    \item Desarrollar el modelo matemático del péndulo simple
-    \item Implementar un simulador en MATLAB del sistema
-    \item Analizar un péndulo físico para validar el modelo matemático
+    \item Desarrollar el modelo matemático del péndulo simple.
+    \item Implementar un simulador del sistema en MATLAB.
+    \item Comparar la simulación con un modelo físico.
   \end{itemize}
   
 \end{frame}
@@ -173,7 +174,7 @@ y(\theta)
 = 
 \begin{pmatrix}
 l\sen(\theta)\\
-l(1 - \cos(\theta)
+l(1 - \cos(\theta))
 \end{pmatrix}
 \label{eq: lagrange position coordinates}
 \end{equation}
@@ -243,7 +244,7 @@ Longitud ($l$) & 0.3 [m] \\
 Masa ($m$) & 0.12166 [kg]\\
 Coeficiente de fricción ($k$) & $\{0,0.1\}$ [$N \cdot s / m$] \\
 Posición angular inicial ($\theta_0$) & $0.5\pi$ [rad] \\
-Velocidad angular inicial ($\dot{\theta}$) & 0 [rad/s] \\
+Velocidad angular inicial ($\dot{\theta}_0$) & 0 [rad/s] \\
 \hline
  \end{tabular}
  \end{center}
@@ -348,7 +349,7 @@ Velocidad angular inicial ($\dot{\theta}$) & 0 [rad/s] \\
 
 \end{frame}
 
-\begin{frame}{Fin}
+\begin{frame}{}
  
 \end{frame}
 

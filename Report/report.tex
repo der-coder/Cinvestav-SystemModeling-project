@@ -14,6 +14,8 @@
 \usepackage{biblatex}
 \addbibresource{bibliografia.bib}
 
+\graphicspath{{img/}}
+
 \usepackage{float}
 \usepackage{import}
 \usepackage{xifthen}
@@ -76,11 +78,11 @@ Análisis, simulación y construcción\\
 
 
 Se presenta el desarrollo de un modelo matemático
-para el péndulo simple mediante dos estrategias de desarrollo:
-método de sumatoria de fuerzas y método de conservación de energía.
-Se incluye también los resultados de los simuladores desarrollados 
+para el péndulo simple mediante tres formulaciones de mecánica: 
+mecánica Newtoniana, mecánica Lagrangiana y mecánica Hamiltoniana.
+Se incluyen los resultados de los simuladores desarrollados 
 en MATLAB.
-Se presenta además una comparación de los modelos matemáticos 
+Se hace una comparación de los modelos matemáticos 
 con una implementación física del péndulo simple empleando el 
 kit de LEGO Mindstorm.
 
@@ -109,8 +111,8 @@ kit de LEGO Mindstorm.
 \section{Código MATLAB}
 \lstinputlisting[language=Matlab]{../codigosM/pendulin.m}
 
-\pagebreak
-\lstinputlisting[language=Matlab]{../codigosM/PenduloProy.m}
+% \pagebreak
+% \lstinputlisting[language=Matlab]{../codigosM/PenduloProy.m}
 
 \end{document}
 
