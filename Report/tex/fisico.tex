@@ -1,9 +1,11 @@
+\pagebreak
+
 \section{Modelo físico}
 \subsection{Prueba de concepto}
 
 Se construyó un péndulo simple empleando 
-el kit de construcción de LEGO Mindstorms.
-El uso de este kit presenta varias características
+el paquete de construcción de LEGO Mindstorms.
+Este paquete posee varias características
 útiles para el estudio del sistema:
 \begin{itemize}
  \item Unidad de computación integrada y programable.
@@ -15,52 +17,38 @@ El uso de este kit presenta varias características
 
 \subsection{Análisis de video}
 
-El modelo construido se empleó para hacer un análisis 
-de su movimiento mediante el software de 
-\emph{Tracker}\footnote{\url{https://www.physlets.org/tracker/}}.
-Tracker es un programa \emph{open-source} de análisis de 
-video y modelado de ecuaciones, 
-enfocado para sistemas físicos.
+Se realizó un análisis de video del péndulo construido con 
+el software de \emph{Tracker}\footnote{\url{https://www.physlets.org/tracker/}}.
+El video fue grabado a 30 cuadros por segundo (fps) en resolución HD.
+La figura \ref{fig: tracker theta} la posición angular del 
+péndulo respecto al eje vertical, medido en radianes.
+El diagrama de fase (figura \ref{fig: tracker phase diagram theta dtheta})
+concuerda con el comportamiento observado en el diagrama de fase de 
+la simulación con fricción.
 
-Se grabó un video del péndulo físico para evaluar el sistema
-y la prueba de concepto. 
-El software es capaz de obtener mediciones sensibles para
-diferentes cantidades físicas como coordenadas rectangulares
-y polares.
-Las figuras \ref{fig: tracker phase diagram x vx} y 
-\ref{fig: tracker phase diagram y vy}
-muestran los diagramas fase del péndulo físico.
-Se presenta también la coordenada \emph{x}
-del péndulo a través del tiempo en la figura \ref{fig: tracker time diagram x}.
 
-\begin{figure}[hb!]
+\begin{figure}[htb!]
  \centering
- \includegraphics[scale=0.4]{./img/tracker_poc_phasediagram_x_vx.png}
+%  \includegraphics[scale=0.4]{./img/tracker_poc_phasediagram_x_vx.png}
+\import{./img/}{pendulum_theta_tracker.pdf_tex}
  % tracker_poc_phasediagram_x_vx.png: 844x585 px, 72dpi, 29.78x20.64 cm, bb=0 0 844 585
  \caption{Diagrama de fase del modelo físico para $x$ y $\dot{x}$}
- \label{fig: tracker phase diagram x vx}
+ \label{fig: tracker theta}
 \end{figure}
 
-\begin{figure}[hb!]
+\begin{figure}[htb!]
  \centering
- \includegraphics[scale=0.4]{./img/tracker_poc_phasediagram_y_vy.png}
+%  \includegraphics[scale=0.4]{./img/tracker_poc_phasediagram_y_vy.png}
+\import{./img/}{pendulum_phase_tracker.pdf_tex}
  % tracker_poc_phasediagram_x_vx.png: 844x585 px, 72dpi, 29.78x20.64 cm, bb=0 0 844 585
- \caption{Diagrama de fase del modelo físico para $y$ y $\dot{y}$}
- \label{fig: tracker phase diagram y vy}
+ \caption{Diagrama de fase del modelo físico para $\theta$ y $\dot \theta$}
+ \label{fig: tracker phase diagram theta dtheta}
 \end{figure}
 
-
-\begin{figure}[hb!]
- \centering
- \includegraphics[scale=0.45]{./img/tracker_poc_timeplot_x.png}
- % tracker_poc_phasediagram_x_vx.png: 844x585 px, 72dpi, 29.78x20.64 cm, bb=0 0 844 585
- \caption{Diagrama de tiempo del modelo físico para $x$.}
- \label{fig: tracker time diagram x}
-\end{figure}
 
 \subsection{Mediciones físicas}
 
-Empleando los sensores incluidos en el kit de LEGO
+Empleando los sensores incluidos en el paquete de LEGO
 Mindstorms, fue posible realizar mediciones de la 
 posición angular del péndulo para comparar con el
 modelo matemático y el análisis de video.
@@ -70,9 +58,10 @@ Se observa que las mediciones realizadas por el sensor
 fueron afectadas por el nivel de ruido introducido 
 por el mismo sensor.
 
-\begin{figure}[hb!]
+\begin{figure}[htb!]
  \centering
- \includegraphics[scale=0.4]{../Mindstorms/Pendulin2_bw.png}
+%  \includegraphics[scale=0.4]{../Mindstorms/Pendulin2_bw.png}
+\import{./img/}{lego.tex}
  % Pendulin2_bw.png: 1157x625 px, 96dpi, 30.61x16.53 cm, bb=0 0 868 469
  \caption{Mediciones de $\theta$ para el péndulo físico con el codificador rotatorio.}
  \label{fig: mindstorms theta}

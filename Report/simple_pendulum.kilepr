@@ -18,6 +18,12 @@ src_extensions=.tex .ltx .latex .dtx .ins
 MakeIndex=
 QuickBuild=
 
+[item:../codigosM/pendulin.m]
+archive=true
+encoding=
+highlight=
+mode=
+
 [item:bibliografia.bib]
 archive=true
 encoding=UTF-8

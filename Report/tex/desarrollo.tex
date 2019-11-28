@@ -161,7 +161,7 @@ la velocidad en ambos ejes.
 
 \begin{equation} 
 T = \frac{1}{2}m(\dot{x}^2 + \dot{y}^2) 
-\label{T_equ}
+\label{eq: T_equ}
 \end{equation}
 
 Se obtienen expresiones para la primer derivada respecto al tiempo de 
@@ -177,11 +177,11 @@ las coordenadas $\{x, y\}$ en función de $\theta$.
 l\dot{\theta}\cos(\theta)\\
 l\dot{\theta}\sen(\theta)
 \end{pmatrix}
-\label{Vel_p}
+\label{eq: Vel_p}
 \end{equation}
 
 
-Sustituyendo la ecuación \ref{Vel_p} en \ref{T_equ}, 
+Substituyendo la ecuación \eqref{eq: Vel_p} en \eqref{eq: T_equ}, 
 se plantea la ecuación de la energía cinética en función de $\theta$.
 
 \begin{equation}
@@ -194,21 +194,21 @@ se plantea la función del Lagrangiano.
 
 
 \begin{equation}
-   L = \dfrac{1}{2}m l^2 \dot{\theta}^2 - m g l (1 - \cos{\theta})
+   \mathcal L = \dfrac{1}{2}m l^2 \dot{\theta}^2 - m g l (1 - \cos{\theta})
  \label{eq: pendulum lagrangian}
 \end{equation}
 
 Se obtienen las derivadas parciales del Lagrangiano para la ecuación de 
 Euler-Lagrange.
 
-\begin{equation}
-\begin{split}
-  \dfrac{\partial L}{\partial \theta} &= - m g l \sin{\theta} \\
-  \dfrac{\partial L}{\partial \dot{\theta}} &= m l ^2 \dot{\theta}\\
-  \dfrac{d}{dt}\dfrac{\partial L}{\partial \dot{\theta}} &= ml^2\ddot{\theta}\\
-  \end{split}
+\begin{subequations}
+\begin{align}
+  \dfrac{\partial \mathcal L}{\partial \theta} &= - m g l \sin{\theta} \\
+  \dfrac{\partial \mathcal L}{\partial \dot{\theta}} &= m l ^2 \dot{\theta}\\
+  \dfrac{d}{dt}\dfrac{\partial \mathcal L}{\partial \dot{\theta}} &= ml^2\ddot{\theta}
+  \end{align}
  \label{eq: partial derivatives lagrangian}
-\end{equation}
+\end{subequations}
 
 
 Substiyendo \eqref{eq: partial derivatives lagrangian} 
@@ -232,3 +232,61 @@ Se observa que para el caso sin fricción ($k = 0$), las ecuaciones
 \eqref{eq: angular acceleration newton} y 
 \eqref{eq: angular acceleration lagrange}
 son idénticas.
+
+
+\subsection{Mecánica Hamiltoniana}
+
+Dado que las coordenadas $\{x, y\}$ son ambas funciones de $\theta$,
+es posible expresar el sistema con una única 
+coordenada generalizada $\mathbf q = \theta$.
+De igual manera el momento generalizado $\mathbf p$ está dado por \eqref{eq: generalized momentum}.
+
+\begin{equation}
+\begin{split}
+ \mathbf p & = p_{\theta}\\
+ p_{\theta} &= \dfrac{\partial \mathcal L}{\partial \dot \theta}\\
+ &= m l^2 \dot \theta 
+\end{split}
+\label{eq: theta momentum}
+\end{equation}
+
+Substituyendo \eqref{eq: theta momentum} en 
+\eqref{eq: hamiltonian} se obtiene el Hamiltoniano del sistema.
+
+\begin{equation}
+ \begin{split}
+  \mathcal H & = p_{\theta} \dot \theta - \mathcal L \\
+  & = m l^2 \dot \theta ^2 - (\dfrac{1}{2}m l^2 \dot{\theta}^2 - m g l (1 - \cos{\theta}))\\
+  & = \dfrac{1}{2}m l^2 \dot{\theta}^2 + m g l (1 - \cos{\theta})
+ \end{split}
+ \label{eq: hamiltonian pendulum}
+\end{equation}
+
+De \eqref{eq: theta momentum} es posible expresar $\dot \theta$ como una función del momento generalizado.
+
+\begin{equation}
+ \dot \theta = \dfrac{p_{\theta}}{m l^2}
+ \label{eq: dtheta hamiltonian}
+\end{equation}
+
+Substituyendo \eqref{eq: dtheta hamiltonian} en 
+\eqref{eq: hamiltonian pendulum} se obtiene una nueva 
+expresión del Hamiltoniano.
+
+\begin{equation}
+ \mathcal H = \dfrac{1}{2} \dfrac{p_{\theta}^2}{m l^2}  + m g l (1 - \cos{\theta})
+ \label{eq: ptheta hamiltonian}
+\end{equation}
+
+Se obtienen las funciones para $\dot p_{\theta}$ y 
+$\dot \theta$ de las derivadas parciales del Hamiltonianio.
+
+\begin{subequations}
+ \begin{align}
+  \dot p_{\theta} &= - \dfrac{\partial \mathcal H}{\partial \theta}\\
+  &= -mgl \sin \theta \\
+  \dot \theta &= \dfrac{\partial \mathcal H}{\partial p_{\theta}}\\
+  &= \dfrac{p_{\theta}}{ml^2}
+ \end{align}
+
+\end{subequations}

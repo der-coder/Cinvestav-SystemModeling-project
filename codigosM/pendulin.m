@@ -5,12 +5,10 @@ clc
 close all
 
 %% Variables para ODE45
-
-l = 0.3;        % Largo del pendulo (m)
-m = 0.12166;    % Masa de la bola (kg)
-k = 0.1;        % Coeficiente de friccion
+l = 0.193;        % Largo del pendulo (m)
+m = 0.1232109;    % Masa de la bola (kg)
+k = 0.1;        % Coeficiente de friccion 0.1
 theta = pi/2;
-
 p0 = [theta 0];         %theta, d_theta
 
 [t,thet] = ode45(@(t,y)pendulo(t,y,l,m,k),tspan,p0);
@@ -25,7 +23,6 @@ set(gcf,'Color',[1 1 1])
 grid on
 
 figure('Name','Retrato Fase')
-
 plot(thet(:,1),thet(:,2),'k','linewidth',3)
 xlabel('Posicion ($\theta$)','Interpreter','latex','fontsize',14)
 ylabel('Velocidad ($\dot{\theta}$)','Interpreter','latex','fontsize',14)
@@ -52,7 +49,6 @@ dx = dx';
 end
 
 function simulacion(t,x,y,l)
-
 x_min = min(x);
 x_max = max(x);
 y_min = min(y);
@@ -80,7 +76,6 @@ for i = 1:n
     viscircles(pos,.05);
     drawnow
 %     k(i) = getframe(fig);
-
 %pause(1/30)
 
 end

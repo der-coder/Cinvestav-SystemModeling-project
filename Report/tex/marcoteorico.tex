@@ -116,10 +116,13 @@ de la siguiente manera:
 \begin{equation}
  \begin{split}
   \sum \boldsymbol{\tau} &= \dfrac{d (I \boldsymbol{\omega})}{dt} \\
+  &= I \dfrac{d \boldsymbol \omega}{dt}\\
   &= I \boldsymbol{\alpha}
  \end{split}
  \label{eq: angular momentum and torque}
 \end{equation}
+
+Donde $\boldsymbol \alpha$ es la aceleración angular de la partícula.
 
 \subsection{Energía}
 
@@ -129,18 +132,20 @@ relacionada con el movimiento de la partícula, y la
 energía potencial, que es una función que depende de la 
 posición de la partícula en el espacio.
 
-\begin{itemize}
- \item Energía cinética.\\
+ \textbf{Energía cinética.}
  De acuerdo a \cite{díaz20183d}, 
- la energía cinética de una partícula se expresa de 
+ la energía cinética de una partícula se expresa como una 
+ función que depende de la masa \emph m y 
+ el vector de velocidad $\bold v$ de
  la siguiente manera: 
  \begin{equation}
-  T = \dfrac{1}{2} m ||\bold{v}||^2
+  T = \dfrac{1}{2} m ||\bold v ||^2
   \label{eq: kinetic energy}
  \end{equation}
 
+ En donde $||\bold v ||$ se define como $||\bold v|| = \sqrt{\bold v \cdot \bold v}$.\\
  
- \item Energía potencial.\\
+ \textbf{Energía potencial.}  
  La energía potencial de la partícula es una función 
  que depende de la posición de partícula, los detalles de esta 
  ecuación se presentarán en el desarrollo matemático
@@ -150,7 +155,6 @@ posición de la partícula en el espacio.
   \label{eq: potential energy}
  \end{equation}
 
-\end{itemize}
 
 \subsection{Mecánica Lagrangiana}
 
@@ -167,7 +171,7 @@ desarrollo matemático del mismo.\\
 
 Se introduce el concepto del \emph{Lagrangiano} $\mathcal{L}$,
 que es una ecuación que describe la dinámica del sistema en 
-función de la energía.
+función de la energía cinética $T$ y la energía potencial $V(x)$.
 
 \begin{equation}
  \mathcal{L} = T - V(x)
@@ -186,6 +190,87 @@ Esto permite minimizar la acción $\mathcal{A}$ del sistema.
 \end{equation}
 
 
+
+\subsection{Mecánica Hamiltoniana}
+% https://www.macs.hw.ac.uk/~simonm/mechanics.pdf
+% http://www.people.fas.harvard.edu/~djmorin/chap15.pdf
+% https://cds.cern.ch/record/399399/files/p1.pdf
+% http://www.damtp.cam.ac.uk/user/tong/dynamics.html
+% https://www.maths.tcd.ie/pub/HistMath/People/Hamilton/Dynamics/
+
+La mecánica Hamiltoniana es una reformulación de la mecánica clásica, 
+propuesta en 1834 por William R. Hamilton \cite{hamilton1834general}.
+Tiene gran importancia en la mecánica cuántica y la mecánica estadística \cite{Montague:399399}.
+Su efectividad es observada en el estudio de sistemas con un número
+incontable de partículas \cite{morin2008introduction}. 
+Cabe resaltar que la mecánica Hamiltoniania considera únicamente a 
+sistemas con restricciones holónomas \cite{morin2008introduction}.
+
+
+\textbf{Restricciones holónomas.} Una restricción $g$ es holónoma si es posible 
+expresarla exclusivamente como una ecuación que depende exclusivamente de 
+las coordenadas generalizadas $\mathbf q$ del sistema.
+\begin{equation}
+ g(\mathbf q) = 0
+\end{equation}
+
+El péndulo simple posee una restricción holónoma dada por la longitud $l$
+y las coordenadas de la masa puntual $m$.
+
+\begin{equation}
+ x^2 + y^2 = l^2
+ \label{eq: holonomic constraint}
+\end{equation}
+
+
+La formulación Hamiltoniana de la mecánica hace uso de las coordenadas 
+generalizadas $\mathbf q = (q_1, \ q_2, \ \dots q_n)^T$, 
+los momentos generalizados $\bold p = (p_1 \ p_2 \ \dots p_n)^T$ 
+y el Lagrangiano $\mathcal L$ del sistema para describir la energía total del sistema. 
+Esta relación se expresa mediante el Hamiltoniano $\mathcal H$. 
+
+\begin{equation}
+ \mathcal H = \mathbf p \cdot \mathbf {\dot q} - \mathcal L
+ \label{eq: hamiltonian}
+\end{equation}
+
+El Hamiltoniano $\mathcal H$ puede ser expresado también como la 
+suma de la energía cinética $T$ y la energía  potencial $V$
+del sistema.
+
+\begin{equation}
+ \mathcal H = T + V
+\end{equation}
+
+De acuerdo a \cite{susskind2014theoretical} es posible expresar las velocidades
+generalizadas $\mathbf{\dot q}$ y las fuerzas generalizadas $\mathbf{\dot p}$ como 
+derivadas parciales de \eqref{eq: hamiltonian}.
+
+\begin{subequations}
+ \begin{align}
+  \mathbf{\dot p} & = - \dfrac{\mathcal H}{\partial \mathbf q}\\
+  \mathbf{\dot q} & = \dfrac{\mathcal H}{\partial \mathbf p}
+ \end{align}
+\end{subequations}
+
+De \cite{Montague:399399} se establece que el momento generalizado $\mathbf p$
+puede ser expresado como la derivada parcial del Lagrangiano $\mathcal L$ respecto a
+la velocidad generalizada $\mathbf {\dot q}$.
+
+\begin{equation}
+ \mathbf p = \dfrac{\partial \mathcal L}{\partial \mathbf{\dot q}}
+ \label{eq: generalized momentum}
+\end{equation}
+
+
+
+
+
+
+
+
+% \subsection{Fricción}
+% https://file.scirp.org/pdf/JAMP_2017012515591136.pdf
 
 
 %  Euler-Lagrange equation
