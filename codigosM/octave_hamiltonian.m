@@ -21,7 +21,7 @@ title('Posición/Momento péndulo')
 set(gcf,'Color',[1 1 1])
 ##grid off
 
-print('-dpdflatex', '../Report/img/PosVelHamilton.tex', '-S300,250','-mono');
+print('-dpdflatex', '../Report/img/presPosVelHamilton.tex', '-S240,200','-mono');
 
 figure(2)
 plot(x(:,2),x(:,1),'k')
@@ -30,7 +30,7 @@ ylabel('Momento $p_{\theta}$')
 title('Retrato fase $\theta / p_{\theta}$','Interpreter','latex')
 set(gcf,'Color',[1 1 1])
 
-print('-dpdflatex', '../Report/img/faseHamilton.tex', '-S300,200','-mono');
+print('-dpdflatex', '../Report/img/presfaseHamilton.tex', '-S180,120','-mono');
 ##grid on
 end
 

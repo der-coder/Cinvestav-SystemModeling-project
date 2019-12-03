@@ -17,11 +17,12 @@ La posición del péndulo se restringe a ser bidimensional
 ya que se asume que el movimiento del sistema está restringido a un plano
 cuya coordenada \emph{z} es cero.
 
-Se emplean dos metodologías para obtener las ecuaciones para las coordenadas 
-$\{x, y\}$ del sistema:
+Se emplean tres formulaciones para obtener las ecuaciones 
+de movimiento para el sistema:
 \begin{itemize}
  \item Mecánica Newtoniana. Utilizando el método de balanceo de torques.
  \item Mecánica Lagrangiana. Basada en la ecuación de Euler-Lagrange.
+ \item Mecánica Hamiltoniana. Utilizando coordenadas y momentos generalizados.
 \end{itemize}
 
 
@@ -282,11 +283,11 @@ Se obtienen las funciones para $\dot p_{\theta}$ y
 $\dot \theta$ de las derivadas parciales del Hamiltonianio.
 
 \begin{subequations}
- \begin{align}
-  \dot p_{\theta} &= - \dfrac{\partial \mathcal H}{\partial \theta}\\
-  &= -mgl \sin \theta \\
-  \dot \theta &= \dfrac{\partial \mathcal H}{\partial p_{\theta}}\\
-  &= \dfrac{p_{\theta}}{ml^2}
- \end{align}
+\begin{align}
+\dot p_{\theta} &= - \dfrac{\partial \mathcal H}{\partial \theta}\\
+&= -mgl \sin \theta \\
+\dot \theta &= \dfrac{\partial \mathcal H}{\partial p_{\theta}}\\
+&= \dfrac{p_{\theta}}{ml^2}
+\end{align}
 
 \end{subequations}

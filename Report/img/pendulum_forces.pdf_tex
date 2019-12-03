@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{160.48325269bp}%
+    \setlength{\unitlength}{186.9268887bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,14 +50,15 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.806818)%
+  \begin{picture}(1,0.74726271)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{pendulum_forces.pdf}}%
-    \put(0.56774134,0.10118585){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mathbf{F}_{mg}$\end{tabular}}}}%
+    \put(0.24832118,0.47637927){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.23416647\unitlength}\raggedright $\theta$\end{minipage}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{pendulum_forces.pdf}}%
-    \put(0.05086811,0.54417537){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\theta$\end{tabular}}}}%
+    \put(0.72901563,0.58037498){\color[rgb]{0,0,0}\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}$g$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{pendulum_forces.pdf}}%
-    \put(0.26747639,0.03342153){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\bold{F}_{f}$\end{tabular}}}}%
+    \put(0.44551573,0.1951554){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$F_f$\end{tabular}}}}%
+    \put(0.66964652,0.09301973){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$F_{mg}$\end{tabular}}}}%
   \end{picture}%
 \endgroup%

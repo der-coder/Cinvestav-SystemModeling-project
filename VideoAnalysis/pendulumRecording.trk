@@ -4,7 +4,7 @@
     <property name="width" type="double">1920.0</property>
     <property name="height" type="double">1080.0</property>
     <property name="magnification" type="double">-1.0</property>
-    <property name="center_x" type="int">412</property>
+    <property name="center_x" type="int">367</property>
     <property name="center_y" type="int">273</property>
     <property name="videoclip" type="object">
     <object class="org.opensourcephysics.media.core.VideoClip">
@@ -26,7 +26,7 @@
     <object class="org.opensourcephysics.media.core.StepperClipControl">
         <property name="rate" type="double">1.0</property>
         <property name="delta_t" type="double">33.333333333333336</property>
-        <property name="frame" type="int">201</property>
+        <property name="frame" type="int">109</property>
     </object>
     </property>
     <property name="coords" type="object">
@@ -41,8 +41,8 @@
                 <property name="xorigin" type="double">976.3106796116506</property>
                 <property name="yorigin" type="double">273.20388349514553</property>
                 <property name="angle" type="double">-91.82740802712789</property>
-                <property name="xscale" type="double">2000.6249023742555</property>
-                <property name="yscale" type="double">2000.6249023742555</property>
+                <property name="xscale" type="double">2222.9165581936177</property>
+                <property name="yscale" type="double">2222.9165581936177</property>
             </object>
             </property>
         </property>
@@ -881,14 +881,14 @@
                 </property>
             </property>
             <property name="worldlengths" type="array" class="[Ljava.lang.Double;">
-                <property name="[0]" type="double">0.02</property>
+                <property name="[0]" type="double">0.018</property>
             </property>
         </object>
         </property>
     </property>
-    <property name="selectedtrack" type="string">axes</property>
+    <property name="selectedtrack" type="string">calibration stick A</property>
     <property name="dividers" type="array" class="[D">
-        <property name="array" type="string">{7.423904974016332E-4,1.0,1.0,0.19227913882702302}</property>
+        <property name="array" type="string">{0.5493689680772086,1.0,1.0,0.19227913882702302}</property>
     </property>
     <property name="views" type="array" class="[[Lorg.opensourcephysics.cabrillo.tracker.TView;">
         <property name="[0]" type="array" class="[Lorg.opensourcephysics.cabrillo.tracker.TView;">
@@ -901,14 +901,62 @@
                         <property name="track" type="string">Pendulum</property>
                         <property name="plot0" type="object">
                         <object class="org.opensourcephysics.cabrillo.tracker.TrackPlottingPanel">
-                            <property name="x_var" type="string">θ</property>
-                            <property name="y_var" type="string">ω</property>
+                            <property name="x_var" type="string">t</property>
+                            <property name="y_var" type="string">α</property>
+                            <property name="lines" type="boolean">true</property>
+                            <property name="points" type="boolean">true</property>
+                        </object>
+                        </property>
+                        <property name="plot1" type="object">
+                        <object class="org.opensourcephysics.cabrillo.tracker.TrackPlottingPanel">
+                            <property name="x_var" type="string">t</property>
+                            <property name="y_var" type="string">y</property>
                             <property name="lines" type="boolean">true</property>
                             <property name="points" type="boolean">true</property>
                         </object>
                         </property>
                         <property name="linked" type="boolean">false</property>
                     </object>
+                    </property>
+                </property>
+            </object>
+            </property>
+            <property name="[1]" type="object">
+            <object class="org.opensourcephysics.cabrillo.tracker.TableTView">
+                <property name="selected_track" type="string">Pendulum</property>
+                <property name="track_columns" type="array" class="[[Ljava.lang.String;">
+                    <property name="[0]" type="array" class="[Ljava.lang.String;">
+                        <property name="[0]" type="string">Pendulum</property>
+                        <property name="[1]" type="string">t</property>
+                        <property name="[2]" type="string">θ</property>
+                        <property name="[3]" type="string">α</property>
+                        <property name="[4]" type="string">ω</property>
+                        <property name="[5]" type="string">x</property>
+                        <property name="[6]" type="string">y</property>
+                        <property name="[7]" type="string">vx</property>
+                        <property name="[8]" type="string">vy</property>
+                        <property name="[9]" type="string">ax</property>
+                        <property name="[10]" type="string">ay</property>
+                        <property name="[11]" type="string">frame</property>
+                    </property>
+                </property>
+                <property name="column_formats" type="array" class="[[[Ljava.lang.String;">
+                    <property name="[0]" type="array" class="[[Ljava.lang.String;">
+                        <property name="[0]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Pendulum</property>
+                            <property name="[1]" type="string">t</property>
+                            <property name="[2]" type="string">0.000</property>
+                        </property>
+                        <property name="[1]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Pendulum</property>
+                            <property name="[1]" type="string">step</property>
+                            <property name="[2]" type="string">0</property>
+                        </property>
+                        <property name="[2]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Pendulum</property>
+                            <property name="[1]" type="string">frame</property>
+                            <property name="[2]" type="string">0</property>
+                        </property>
                     </property>
                 </property>
             </object>
@@ -949,7 +997,7 @@
         </property>
     </property>
     <property name="selected_views" type="array" class="[Ljava.lang.String;">
-        <property name="[0]" type="string">Plot View</property>
+        <property name="[0]" type="string">Table View</property>
         <property name="[1]" type="string">Table View</property>
         <property name="[2]" type="string">World View</property>
         <property name="[3]" type="string">Page View</property>
@@ -966,5 +1014,781 @@
         <property name="stretch" type="int">1</property>
         <property name="stretch_acceleration" type="int">1</property>
     </object>
+    </property>
+    <property name="track_control_x" type="int">4</property>
+    <property name="track_control_y" type="int">113</property>
+    <property name="datatool_tabs" type="array" class="[Lorg.opensourcephysics.tools.DataToolTab;">
+        <property name="[0]" type="object">
+        <object class="org.opensourcephysics.tools.DataToolTab">
+            <property name="name" type="string">Pendulum</property>
+            <property name="owner_name" type="string">Pendulum</property>
+            <property name="owned_columns" type="array" class="[[Ljava.lang.String;">
+                <property name="[0]" type="array" class="[Ljava.lang.String;">
+                    <property name="[0]" type="string">a_{x}</property>
+                    <property name="[1]" type="string">Pendulum</property>
+                    <property name="[2]" type="string">a_{x}</property>
+                </property>
+                <property name="[1]" type="array" class="[Ljava.lang.String;">
+                    <property name="[0]" type="string">a_{y}</property>
+                    <property name="[1]" type="string">Pendulum</property>
+                    <property name="[2]" type="string">a_{y}</property>
+                </property>
+                <property name="[2]" type="array" class="[Ljava.lang.String;">
+                    <property name="[0]" type="string">t</property>
+                    <property name="[1]" type="string">Pendulum</property>
+                    <property name="[2]" type="string">x</property>
+                </property>
+                <property name="[3]" type="array" class="[Ljava.lang.String;">
+                    <property name="[0]" type="string">v_{x}</property>
+                    <property name="[1]" type="string">Pendulum</property>
+                    <property name="[2]" type="string">v_{x}</property>
+                </property>
+                <property name="[4]" type="array" class="[Ljava.lang.String;">
+                    <property name="[0]" type="string">v_{y}</property>
+                    <property name="[1]" type="string">Pendulum</property>
+                    <property name="[2]" type="string">v_{y}</property>
+                </property>
+                <property name="[5]" type="array" class="[Ljava.lang.String;">
+                    <property name="[0]" type="string">x</property>
+                    <property name="[1]" type="string">Pendulum</property>
+                    <property name="[2]" type="string">x</property>
+                </property>
+                <property name="[6]" type="array" class="[Ljava.lang.String;">
+                    <property name="[0]" type="string">y</property>
+                    <property name="[1]" type="string">Pendulum</property>
+                    <property name="[2]" type="string">y</property>
+                </property>
+                <property name="[7]" type="array" class="[Ljava.lang.String;">
+                    <property name="[0]" type="string">α</property>
+                    <property name="[1]" type="string">Pendulum</property>
+                    <property name="[2]" type="string">α</property>
+                </property>
+                <property name="[8]" type="array" class="[Ljava.lang.String;">
+                    <property name="[0]" type="string">θ</property>
+                    <property name="[1]" type="string">Pendulum</property>
+                    <property name="[2]" type="string">θ</property>
+                </property>
+                <property name="[9]" type="array" class="[Ljava.lang.String;">
+                    <property name="[0]" type="string">ω</property>
+                    <property name="[1]" type="string">Pendulum</property>
+                    <property name="[2]" type="string">ω</property>
+                </property>
+            </property>
+            <property name="editable" type="boolean">false</property>
+            <property name="data" type="object">
+            <object class="org.opensourcephysics.display.DatasetManager">
+                <property name="connected" type="boolean">false</property>
+                <property name="sorted" type="boolean">false</property>
+                <property name="maker_shape" type="int">2</property>
+                <property name="stride" type="int">1</property>
+                <property name="linked" type="boolean">false</property>
+                <property name="x_column_name" type="string">x</property>
+                <property name="y_column_name" type="string">y</property>
+                <property name="data_name" type="string"></property>
+                <property name="datasets" type="collection" class="java.util.ArrayList">
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.tools.DataColumn">
+                        <property name="points" type="array" class="[[D">
+                            <property name="array" type="string">{{0.0,0.0},{1.0,0.03333333333333303},{2.0,0.06666666666666651},{3.0,0.1},{4.0,0.1333333333333335},{5.0,0.16666666666666652},{6.0,0.2},{7.0,0.23333333333333348},{8.0,0.2666666666666665},{9.0,0.3},{10.0,0.3333333333333335},{11.0,0.36666666666666653},{12.0,0.4},{13.0,0.433333333333333},{14.0,0.46666666666666695},{15.0,0.5},{16.0,0.533333333333333},{17.0,0.5666666666666665},{18.0,0.6},{19.0,0.6333333333333335},{20.0,0.6666666666666665},{21.0,0.7},{22.0,0.7333333333333335},{23.0,0.7666666666666665},{24.0,0.8},{25.0,0.8333333333333335},{26.0,0.8666666666666665},{27.0,0.9},{28.0,0.933333333333333},{29.0,0.966666666666667},{30.0,1.0},{31.0,1.033333333333333},{32.0,1.0666666666666664},{33.0,1.1},{34.0,1.1333333333333335},{35.0,1.1666666666666665},{36.0,1.1999999999999995},{37.0,1.2333333333333334},{38.0,1.2666666666666666},{39.0,1.3},{40.0,1.3333333333333335},{41.0,1.3666666666666665},{42.0,1.4},{43.0,1.4333333333333331},{44.0,1.466666666666667},{45.0,1.5},{46.0,1.533333333333333},{47.0,1.5666666666666664},{48.0,1.6},{49.0,1.633333333333333},{50.0,1.666666666666667},{51.0,1.7},{52.0,1.733333333333333},{53.0,1.766666666666667},{54.0,1.8},{55.0,1.833333333333333},{56.0,1.866666666666666},{57.0,1.9},{58.0,1.933333333333334},{59.0,1.966666666666667},{60.0,2.0},{61.0,2.033333333333333},{62.0,2.066666666666666},{63.0,2.1},{64.0,2.133333333333333},{65.0,2.166666666666667},{66.0,2.2},{67.0,2.233333333333333},{68.0,2.266666666666667},{69.0,2.3},{70.0,2.333333333333333},{71.0,2.3666666666666663},{72.0,2.4},{73.0,2.433333333333334},{74.0,2.466666666666667},{75.0,2.5},{76.0,2.533333333333333},{77.0,2.566666666666666},{78.0,2.6},{79.0,2.633333333333333},{80.0,2.666666666666667},{81.0,2.7},{82.0,2.733333333333333},{83.0,2.766666666666667},{84.0,2.8},{85.0,2.833333333333333},{86.0,2.8666666666666663},{87.0,2.9},{88.0,2.933333333333334},{89.0,2.966666666666667},{90.0,3.0},{91.0,3.033333333333333},{92.0,3.066666666666666},{93.0,3.1},{94.0,3.133333333333333},{95.0,3.166666666666667},{96.0,3.2},{97.0,3.233333333333333},{98.0,3.266666666666667},{99.0,3.3},{100.0,3.333333333333333},{101.0,3.3666666666666663},{102.0,3.4},{103.0,3.433333333333334},{104.0,3.466666666666667},{105.0,3.5},{106.0,3.533333333333333},{107.0,3.566666666666666},{108.0,3.6},{109.0,3.633333333333333},{110.0,3.666666666666667},{111.0,3.7},{112.0,3.733333333333333},{113.0,3.766666666666667},{114.0,3.8},{115.0,3.833333333333333},{116.0,3.8666666666666663},{117.0,3.9},{118.0,3.933333333333334},{119.0,3.966666666666667},{120.0,4.0},{121.0,4.033333333333333},{122.0,4.066666666666666},{123.0,4.1},{124.0,4.133333333333333},{125.0,4.166666666666667},{126.0,4.2}}</property>
+                        </property>
+                        <property name="index" type="int">127</property>
+                        <property name="marker_shape" type="int">2</property>
+                        <property name="marker_size" type="int">2</property>
+                        <property name="sorted" type="boolean">false</property>
+                        <property name="connected" type="boolean">false</property>
+                        <property name="x_name" type="string">row</property>
+                        <property name="y_name" type="string">t</property>
+                        <property name="line_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="fill_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">100</property>
+                        </object>
+                        </property>
+                        <property name="edge_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="errorbar_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="datasetID" type="int">678422616</property>
+                        <property name="visible" type="array" class="[Z">
+                            <property name="array" type="string">{false,true}</property>
+                        </property>
+                    </object>
+                    </property>
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.tools.DataColumn">
+                        <property name="points" type="array" class="[[D">
+                            <property name="array" type="string">{{0.0,NaN},{1.0,NaN},{2.0,-42.91763520373837},{3.0,-38.00256175555402},{4.0,-29.297512863926105},{5.0,-19.875923572219598},{6.0,-22.881720602018323},{7.0,-14.672293619912354},{8.0,0.03433886922887177},{9.0,17.37172062265808},{10.0,27.5118462462991},{11.0,39.55537714092441},{12.0,40.94418984609726},{13.0,35.95427314204041},{14.0,37.71465588651075},{15.0,44.43916481197079},{16.0,46.95409628562771},{17.0,42.28622083353104},{18.0,31.986759381424193},{19.0,31.159363420870395},{20.0,28.945347890042765},{21.0,18.785803160475414},{22.0,3.958078275577155},{23.0,-4.207616554907828},{24.0,-11.461254650821408},{25.0,-17.367949203884965},{26.0,-20.504136640616053},{27.0,-26.248216094416122},{28.0,-33.24023150902662},{29.0,-38.40607422179498},{30.0,-39.36687283333989},{31.0,-37.20312419006963},{32.0,-34.56884570422388},{33.0,-29.32534900323184},{34.0,-24.710748054070105},{35.0,-19.936434909336217},{36.0,-13.880212937477356},{37.0,-6.400315106605251},{38.0,1.6719399493808407},{39.0,9.461544738692847},{40.0,16.343448104717318},{41.0,20.559135300193176},{42.0,25.944674014730538},{43.0,29.063278615354022},{44.0,29.987301944016142},{45.0,30.211580367630354},{46.0,30.192253760849653},{47.0,27.870435304211025},{48.0,22.05739461839782},{49.0,17.309046459123035},{50.0,12.349627219925129},{51.0,7.022305824126342},{52.0,0.8152708712390495},{53.0,-4.332147503671738},{54.0,-10.102023800401179},{55.0,-15.294624843329387},{56.0,-18.88416010357974},{57.0,-22.47465675037102},{58.0,-24.356795853159745},{59.0,-24.108400284796065},{60.0,-23.102541763975864},{61.0,-21.62425200738706},{62.0,-17.265456758882106},{63.0,-12.866271446439928},{64.0,-10.533780427367033},{65.0,-7.124532654165841},{66.0,-1.5286550828656085},{67.0,3.5029622832551643},{68.0,7.13855704484159},{69.0,10.82397005070367},{70.0,14.39348831819255},{71.0,16.62068883223512},{72.0,17.991606709893553},{73.0,18.345065375561344},{74.0,17.90227833297245},{75.0,16.62421665068033},{76.0,13.659856881743199},{77.0,7.986718974018887},{78.0,4.597867542315379},{79.0,3.5073356932019664},{80.0,0.40410798152887367},{81.0,-3.79233094485569},{82.0,-5.618667952557209},{83.0,-8.139319446658337},{84.0,-11.49609092764851},{85.0,-11.951903375979334},{86.0,-10.60879119764797},{87.0,-10.915455317843067},{88.0,-10.891953286510532},{89.0,-9.626489737855977},{90.0,-7.527825192866443},{91.0,-5.413140993007943},{92.0,-2.397076168332199},{93.0,1.9381107448318138},{94.0,3.634369562160684},{95.0,2.725454143506472},{96.0,2.9454363173087232},{97.0,7.150315863723841},{98.0,9.223914222022962},{99.0,7.623104990426337},{100.0,5.237698508551954},{101.0,4.426470118215552},{102.0,3.473138117092947},{103.0,2.612721631065512},{104.0,1.2415049508439366},{105.0,-0.7648402172793741},{106.0,-2.7142227362758184},{107.0,-3.142086380397127},{108.0,-4.661248723052804},{109.0,-6.325546169404794},{110.0,-6.062225167974135},{111.0,-3.0616916451666394},{112.0,-0.43990768891312526},{113.0,0.9170291561068306},{114.0,1.382642627180115},{115.0,1.7277643735575166},{116.0,2.6228085048578116},{117.0,2.043204186309432},{118.0,2.335685770057908},{119.0,3.30192071794371},{120.0,3.0447956008662658},{121.0,2.38429833255944},{122.0,2.391227396308243},{123.0,1.636361204309716},{124.0,-0.15820820924616125},{125.0,NaN},{126.0,NaN}}</property>
+                        </property>
+                        <property name="index" type="int">127</property>
+                        <property name="marker_shape" type="int">6</property>
+                        <property name="marker_size" type="int">2</property>
+                        <property name="sorted" type="boolean">false</property>
+                        <property name="connected" type="boolean">true</property>
+                        <property name="x_name" type="string">row</property>
+                        <property name="y_name" type="string">α</property>
+                        <property name="line_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="fill_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">100</property>
+                        </object>
+                        </property>
+                        <property name="edge_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="errorbar_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="datasetID" type="int">835119436</property>
+                        <property name="visible" type="array" class="[Z">
+                            <property name="array" type="string">{false,true}</property>
+                        </property>
+                    </object>
+                    </property>
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.tools.DataColumn">
+                        <property name="points" type="array" class="[[D">
+                            <property name="array" type="string">{{0.0,1.5629980935226473},{1.0,1.5172127177411259},{2.0,1.4271055837348914},{3.0,1.2884435446697338},{4.0,1.1000337067364687},{5.0,0.8870127320037996},{6.0,0.6467214890897423},{7.0,0.3946515269107616},{8.0,0.0985354428027056},{9.0,-0.17679165877980674},{10.0,-0.4391225721745581},{11.0,-0.674180059066158},{12.0,-0.8561533607201937},{13.0,-0.9911999000745773},{14.0,-1.090493363158958},{15.0,-1.1505210296178376},{16.0,-1.158532361059653},{17.0,-1.11101501738379},{18.0,-1.0162077580685132},{19.0,-0.8834176329774144},{20.0,-0.7304987690394791},{21.0,-0.5245805769553465},{22.0,-0.3057248741427353},{23.0,-0.08621886438941315},{24.0,0.13476670085160847},{25.0,0.33651967265128396},{26.0,0.5210704332609739},{27.0,0.6831150794152132},{28.0,0.8163827992846632},{29.0,0.9132456271140182},{30.0,0.9642251523087567},{31.0,0.9710775681885352},{32.0,0.9369105563234927},{33.0,0.8637209790959269},{34.0,0.755650277696096},{35.0,0.6248808040157287},{36.0,0.4669432593848255},{37.0,0.29492601325728834},{38.0,0.11721778445727066},{39.0,-0.06276438314085717},{40.0,-0.22714267117730258},{41.0,-0.37585794355213387},{42.0,-0.5001137652405014},{43.0,-0.5967695857860944},{44.0,-0.6583889042305828},{45.0,-0.68713911568757},{46.0,-0.6836122043890734},{47.0,-0.6438806050038525},{48.0,-0.5733188403231203},{49.0,-0.47682198548933685},{50.0,-0.36427917433131585},{51.0,-0.23442742936055713},{52.0,-0.09855871335565627},{53.0,0.03828457937911858},{54.0,0.1708195338175366},{55.0,0.2919951786785592},{56.0,0.39523247808936063},{57.0,0.47725750863994204},{58.0,0.5356008875282638},{59.0,0.5632775698520848},{60.0,0.5659150759226279},{61.0,0.5430231529411595},{62.0,0.49362133181997087},{63.0,0.4254194735983137},{64.0,0.3447841262158719},{65.0,0.25156354960558663},{66.0,0.1486896043358678},{67.0,0.04517442540583133},{68.0,-0.05367030414099477},{69.0,-0.14525684300077102},{70.0,-0.2246400620999487},{71.0,-0.2874932346632265},{72.0,-0.33137011999798205},{73.0,-0.35560547058606123},{74.0,-0.358312051095313},{75.0,-0.34161140056452105},{76.0,-0.30593039537772926},{77.0,-0.2534774217956699},{78.0,-0.1920410898112882},{79.0,-0.12979230114891768},{80.0,-0.05986495990795948},{81.0,0.011371734594025087},{82.0,0.07453737766516134},{83.0,0.13375229094710472},{84.0,0.18511397497263005},{85.0,0.2205533237127487},{86.0,0.2430223843632068},{87.0,0.2543895881936431},{88.0,0.2541234551306967},{89.0,0.23996019132512286},{90.0,0.21591836441266496},{91.0,0.18315516392260958},{92.0,0.14407771115579893},{93.0,0.10214190652002113},{94.0,0.06148591908760194},{95.0,0.029305655060124634},{96.0,-0.0027343518697212563},{97.0,-0.032861479515097713},{98.0,-0.05454370861749789},{99.0,-0.0629993809043505},{100.0,-0.0638690094274117},{101.0,-0.05969885211560517},{102.0,-0.050305589786634186},{103.0,-0.036572720358550234},{104.0,-0.021065718363160867},{105.0,-0.0023989381970322063},{106.0,0.01458211695451963},{107.0,0.02795760283444435},{108.0,0.03787185699531394},{109.0,0.04436430319373793},{110.0,0.04132361468745776},{111.0,0.03140508998632714},{112.0,0.017761134184499334},{113.0,0.004676582608475121},{114.0,-0.007232396329108324},{115.0,-0.017897913954185534},{116.0,-0.026227252636317977},{117.0,-0.032585237370427955},{118.0,-0.03403662111729144},{119.0,-0.036873466235177066},{120.0,-0.033455497844661834},{121.0,-0.02519348555372244},{122.0,-0.01861148084067372},{123.0,-0.005081237367926508},{124.0,0.009005873195473406},{125.0,0.021673071268844712},{126.0,0.03529801683953782}}</property>
+                        </property>
+                        <property name="index" type="int">127</property>
+                        <property name="marker_shape" type="int">2</property>
+                        <property name="marker_size" type="int">2</property>
+                        <property name="sorted" type="boolean">false</property>
+                        <property name="connected" type="boolean">false</property>
+                        <property name="x_name" type="string">row</property>
+                        <property name="y_name" type="string">θ</property>
+                        <property name="line_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">128</property>
+                            <property name="green" type="int">108</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="fill_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">100</property>
+                        </object>
+                        </property>
+                        <property name="edge_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="errorbar_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="datasetID" type="int">641975378</property>
+                        <property name="visible" type="array" class="[Z">
+                            <property name="array" type="string">{false,true}</property>
+                        </property>
+                    </object>
+                    </property>
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.tools.DataColumn">
+                        <property name="points" type="array" class="[[D">
+                            <property name="array" type="string">{{0.0,NaN},{1.0,-2.0383876468163433},{2.0,-3.431537596070865},{3.0,-4.906078154976316},{4.0,-6.021462189989026},{5.0,-6.799683264700913},{6.0,-7.3854180763955375},{7.0,-8.222790694305573},{8.0,-8.571647785358545},{9.0,-8.064870224658916},{10.0,-7.460826004295282},{11.0,-6.255461828184545},{12.0,-4.7552976151263024},{13.0,-3.5151000365814506},{14.0,-2.3898169431488943},{15.0,-1.0205849685104347},{16.0,0.592590183510715},{17.0,2.134869044867087},{18.0,3.413960766095619},{19.0,4.285634835435519},{20.0,5.382555840331037},{21.0,6.371608423451126},{22.0,6.5754256884890125},{23.0,6.607373624915169},{24.0,6.341078055610426},{25.0,5.7945559861405025},{26.0,5.198931101458949},{27.0,4.4296854903553475},{28.0,3.451958215482059},{29.0,2.2176352953613927},{30.0,0.8674791161177631},{31.0,-0.4097189397789611},{32.0,-1.6103488363891134},{33.0,-2.718904179410933},{34.0,-3.582602626202987},{35.0,-4.330605274669103},{36.0,-4.949321861376589},{37.0,-5.245882123913289},{38.0,-5.365355945972183},{39.0,-5.165406834518582},{40.0,-4.696403406169167},{41.0,-4.094566410947998},{42.0,-3.3136746335094087},{43.0,-2.3741270848512057},{44.0,-1.3555429485221302},{45.0,-0.3783495023773631},{46.0,0.6488776602557657},{47.0,1.6544004609892864},{48.0,2.5058792927177347},{49.0,3.135594989877057},{50.0,3.6359183419316845},{51.0,3.9858069146349346},{52.0,4.09068013109511},{53.0,4.040673707597867},{54.0,3.8056589894916484},{55.0,3.366194164077395},{56.0,2.7789349494207345},{57.0,2.1055261415835065},{58.0,1.2903009181821326},{59.0,0.4547128259154656},{60.0,-0.30381625366388043},{61.0,-1.0844061615398668},{62.0,-1.764055190142682},{63.0,-2.2325580840614774},{64.0,-2.607838859890898},{65.0,-2.9414178282000325},{66.0,-3.0958368629963613},{67.0,-3.0353986271529294},{68.0,-2.856469026099026},{69.0,-2.564546369384335},{70.0,-2.13354587493684},{71.0,-1.6009508684704954},{72.0,-1.021683538842504},{73.0,-0.404128966459963},{74.0,0.2099110503231049},{75.0,0.785724835763759},{76.0,1.3220096815327809},{77.0,1.7083395834966106},{78.0,1.8552768097012775},{79.0,1.9826419485499247},{80.0,2.117460536144121},{81.0,2.0160350635968327},{82.0,1.8357083452961889},{83.0,1.6586489596120253},{84.0,1.3020154914846729},{85.0,0.8686261408586545},{86.0,0.5075439672134147},{87.0,0.16651606151234527},{88.0,-0.21644095302780292},{89.0,-0.5730763607704815},{90.0,-0.8520754110377022},{91.0,-1.0776097988530016},{92.0,-1.2151988610388231},{93.0,-1.238876881022951},{94.0,-1.092543771898444},{95.0,-0.9633040643598384},{96.0,-0.9325070186283447},{97.0,-0.777140351216647},{98.0,-0.45206852083879046},{99.0,-0.1398795121487085},{100.0,0.04950793183118023},{101.0,0.20345129461166198},{102.0,0.3468919763558183},{103.0,0.43859807135209844},{104.0,0.5126067324227757},{105.0,0.5347175297652094},{106.0,0.455348115472153},{107.0,0.34934610061191357},{108.0,0.24610050538940295},{109.0,0.05177636538215716},{110.0,-0.1943881981111599},{111.0,-0.35343720754437996},{112.0,-0.40092761066777904},{113.0,-0.3749029577041137},{114.0,-0.33861744843991326},{115.0,-0.28492284460814576},{116.0,-0.22030985124363564},{117.0,-0.11714052721460007},{118.0,-0.06432343297123647},{119.0,0.008716849089444227},{120.0,0.17519971022182},{121.0,0.22266025505982248},{122.0,0.30168372278694006},{123.0,0.41426031054220835},{124.0,0.4013146295515644},{125.0,0.3943821546609624},{126.0,NaN}}</property>
+                        </property>
+                        <property name="index" type="int">127</property>
+                        <property name="marker_shape" type="int">2</property>
+                        <property name="marker_size" type="int">2</property>
+                        <property name="sorted" type="boolean">false</property>
+                        <property name="connected" type="boolean">false</property>
+                        <property name="x_name" type="string">row</property>
+                        <property name="y_name" type="string">ω</property>
+                        <property name="line_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">128</property>
+                            <property name="blue" type="int">54</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="fill_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">100</property>
+                        </object>
+                        </property>
+                        <property name="edge_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="errorbar_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="datasetID" type="int">1788983904</property>
+                        <property name="visible" type="array" class="[Z">
+                            <property name="array" type="string">{false,true}</property>
+                        </property>
+                    </object>
+                    </property>
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.tools.DataColumn">
+                        <property name="points" type="array" class="[[D">
+                            <property name="array" type="string">{{0.0,0.001505861306151754},{1.0,0.010377467213043542},{2.0,0.02790636643348629},{3.0,0.05464695615233581},{4.0,0.08897572547814689},{5.0,0.12443014953137005},{6.0,0.1568593293081482},{7.0,0.1808220465654636},{8.0,0.19422067956222963},{9.0,0.19042469581669227},{10.0,0.17304510836219925},{11.0,0.1500219085194399},{12.0,0.1265448785560682},{13.0,0.1059481841389742},{14.0,0.08950517239391526},{15.0,0.07908826329753185},{16.0,0.07783340977201716},{17.0,0.08599118998135019},{18.0,0.10201093798361904},{19.0,0.12287068295395911},{20.0,0.14391342680358019},{21.0,0.16730052434967527},{22.0,0.18488271315366303},{23.0,0.1936053239425127},{24.0,0.19336143508519074},{25.0,0.1847063852803881},{26.0,0.1699620763707219},{27.0,0.15148341824844438},{28.0,0.13368198331189918},{29.0,0.11938455339028237},{30.0,0.11157750870899893},{31.0,0.11036579205774835},{32.0,0.11562746311534897},{33.0,0.12668286341006738},{34.0,0.14183834466226206},{35.0,0.15832117883918004},{36.0,0.1746085772433458},{37.0,0.18703478096948303},{38.0,0.19417454585606517},{39.0,0.195220104894379},{40.0,0.19092847979606617},{41.0,0.18226641267275637},{42.0,0.1723417073037867},{43.0,0.16266560164556024},{44.0,0.15598476234149108},{45.0,0.15266496337199484},{46.0,0.15301390639856868},{47.0,0.15785482414733895},{48.0,0.16562985895777024},{49.0,0.17492513639600596},{50.0,0.1840121972457507},{51.0,0.19143526869001556},{52.0,0.1959038482310155},{53.0,0.19677640843691555},{54.0,0.19412301346029423},{55.0,0.18888679607252865},{56.0,0.1820197587955595},{57.0,0.17523072313319213},{58.0,0.16982958560927888},{59.0,0.16745876271052643},{60.0,0.16731596639489651},{61.0,0.1694708440036675},{62.0,0.17428165635079787},{63.0,0.1801720701231954},{64.0,0.1861961524400426},{65.0,0.19168473383580317},{66.0,0.19548448374673386},{67.0,0.19756021956287714},{68.0,0.19749076934533108},{69.0,0.19586906512805854},{70.0,0.19306298771015476},{71.0,0.19014536104302823},{72.0,0.18761918086210125},{73.0,0.18596217379653598},{74.0,0.1858819894677686},{75.0,0.18708130767525175},{76.0,0.18927115612946568},{77.0,0.1920476857312792},{78.0,0.1945879852002216},{79.0,0.19661038639020087},{80.0,0.19790583054220104},{81.0,0.19822706004939225},{82.0,0.19781466600247458},{83.0,0.19659401365433607},{84.0,0.19506445816358517},{85.0,0.19390316386851056},{86.0,0.19286748857607203},{87.0,0.19226579829972004},{88.0,0.1924172466903856},{89.0,0.19314168397787726},{90.0,0.19411080546377166},{91.0,0.1952350382861511},{92.0,0.19635495624786045},{93.0,0.1973710656102214},{94.0,0.19819342466152653},{95.0,0.19842563142182032},{96.0,0.1983970603952339},{97.0,0.198304400036621},{98.0,0.19815163155781415},{99.0,0.19796824322645548},{100.0,0.19799757810407},{101.0,0.19797860600815356},{102.0,0.1981230605424452},{103.0,0.1981803844594072},{104.0,0.19821683798666015},{105.0,0.1985663604693643},{106.0,0.19903023530889538},{107.0,0.1990342703137448},{108.0,0.199008665885794},{109.0,0.19899173668666884},{110.0,0.19916930799837038},{111.0,0.19921666279506176},{112.0,0.19933464395682268},{113.0,0.1994155975388873},{114.0,0.1994199543700669},{115.0,0.19924264706977016},{116.0,0.19913549806264244},{117.0,0.19958256290704715},{118.0,0.19960162702170284},{119.0,0.19904939601001684},{120.0,0.1988885018473263},{121.0,0.19914192960813362},{122.0,0.1990251756094121},{123.0,0.1986059010231623},{124.0,0.19842960476840435},{125.0,0.19846121027567584},{126.0,0.1985171378405259}}</property>
+                        </property>
+                        <property name="index" type="int">127</property>
+                        <property name="marker_shape" type="int">2</property>
+                        <property name="marker_size" type="int">2</property>
+                        <property name="sorted" type="boolean">false</property>
+                        <property name="connected" type="boolean">true</property>
+                        <property name="x_name" type="string">row</property>
+                        <property name="y_name" type="string">x</property>
+                        <property name="line_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">255</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="fill_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">100</property>
+                        </object>
+                        </property>
+                        <property name="edge_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="errorbar_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="datasetID" type="int">678422616</property>
+                        <property name="visible" type="array" class="[Z">
+                            <property name="array" type="string">{false,true}</property>
+                        </property>
+                    </object>
+                    </property>
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.tools.DataColumn">
+                        <property name="points" type="array" class="[[D">
+                            <property name="array" type="string">{{0.0,0.1930989659352848},{1.0,0.19348329751603494},{2.0,0.19287283066760447},{3.0,0.1883706271418893},{4.0,0.1748304932358356},{5.0,0.15268656612946313},{6.0,0.1184357024115224},{7.0,0.07531289747437214},{8.0,0.019199799365435588},{9.0,-0.03402068068465103},{10.0,-0.08128085755068043},{11.0,-0.11987959128442532},{12.0,-0.14585049421875435},{13.0,-0.1618538222050187},{14.0,-0.17179628134362934},{15.0,-0.17696972544299922},{16.0,-0.17797592402814766},{17.0,-0.17365768125645142},{18.0,-0.16468345443114274},{19.0,-0.14967095552215426},{20.0,-0.12891997226497032},{21.0,-0.09681013489528806},{22.0,-0.05835270551446464},{23.0,-0.0167339166644922},{24.0,0.0262175970815805},{25.0,0.06461506956919955},{26.0,0.0975555214002774},{27.0,0.12328122560228488},{28.0,0.14223387255710823},{29.0,0.15460560543369034},{30.0,0.16081453112238692},{31.0,0.1614186278663346},{32.0,0.15729848190880974},{33.0,0.14826141585890146},{34.0,0.1336409984630455},{35.0,0.11419757519436596},{36.0,0.08802478952054144},{37.0,0.056818436381726733},{38.0,0.022865530313753712},{39.0,-0.012268984373660419},{40.0,-0.044129565450788444},{41.0,-0.07192556820371865},{42.0,-0.09417616337048235},{43.0,-0.11051580066508443},{44.0,-0.12065836491641879},{45.0,-0.12526736728841165},{46.0,-0.12465327592880077},{47.0,-0.11848474680690024},{48.0,-0.10694072476331495},{49.0,-0.09036250037915189},{50.0,-0.07016315287612612},{51.0,-0.045718263444698704},{52.0,-0.019370793344815507},{53.0,0.007537184828541987},{54.0,0.03348634082221785},{55.0,0.05677690283543024},{56.0,0.07593586667348512},{57.0,0.0906170640324418},{58.0,0.1007880047528496},{59.0,0.10575436552524248},{60.0,0.10628251394645222},{61.0,0.10228353745918412},{62.0,0.09377203269019313},{63.0,0.08163391883631493},{64.0,0.06686840208007322},{65.0,0.049264525413935445},{66.0,0.02928262857340641},{67.0,0.008930745304586152},{68.0,-0.010609578581749601},{69.0,-0.0286531287941581},{70.0,-0.04411423792453473},{71.0,-0.056223098420183804},{72.0,-0.06455159011466705},{73.0,-0.06906522855558311},{74.0,-0.06960852557217095},{75.0,-0.0665169363740275},{76.0,-0.059780563452954516},{77.0,-0.04974983316591031},{78.0,-0.037835153719324666},{79.0,-0.025662782009569007},{80.0,-0.011861798154819303},{81.0,0.0022542826889412892},{82.0,0.014771953380158853},{83.0,0.0264528323608898},{84.0,0.036527343227592046},{85.0,0.04347318367276576},{86.0,0.04781618361462692},{87.0,0.04999352682051206},{88.0,0.049978239760786525},{89.0,0.047256846976274414},{90.0,0.04257579151181262},{91.0,0.036163591729423405},{92.0,0.028487766026204342},{93.0,0.02023025980691756},{94.0,0.012201484727654255},{95.0,0.005816658361809668},{96.0,-5.424887250444765E-4},{97.0,-0.006518922693043605},{98.0,-0.010818655540533795},{99.0,-0.012488402967636703},{100.0,-0.012663132563022539},{101.0,-0.011833156467587369},{102.0,-0.009975113345599418},{103.0,-0.007251229063723275},{104.0,-0.004176197851576524},{105.0,-4.763493405576247E-4},{106.0,0.0029024878982140123},{107.0,0.005565971327636032},{108.0,0.007540433104654631},{109.0,0.00883392611914996},{110.0,0.008235083797622389},{111.0,0.006258474892686439},{112.0,0.0035407816892708555},{113.0,9.325903140344205E-4},{114.0,-0.0014423092939164217},{115.0,-0.0035664085769406273},{116.0,-0.005223974874556336},{117.0,-0.006505747946390528},{118.0,-0.00679638967611873},{119.0,-0.007342969446890113},{120.0,-0.006656397466286379},{121.0,-0.005018141062622383},{122.0,-0.0037045809923801354},{123.0,-0.001009172411049697},{124.0,0.0017870801731938446},{125.0,0.004301937547095236},{126.0,0.007010172957943317}}</property>
+                        </property>
+                        <property name="index" type="int">127</property>
+                        <property name="marker_shape" type="int">2</property>
+                        <property name="marker_size" type="int">2</property>
+                        <property name="sorted" type="boolean">false</property>
+                        <property name="connected" type="boolean">true</property>
+                        <property name="x_name" type="string">row</property>
+                        <property name="y_name" type="string">y</property>
+                        <property name="line_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">178</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="fill_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">100</property>
+                        </object>
+                        </property>
+                        <property name="edge_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="errorbar_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="datasetID" type="int">456896563</property>
+                        <property name="visible" type="array" class="[Z">
+                            <property name="array" type="string">{false,true}</property>
+                        </property>
+                    </object>
+                    </property>
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.tools.DataColumn">
+                        <property name="points" type="array" class="[[D">
+                            <property name="array" type="string">{{0.0,NaN},{1.0,0.396007576910019},{2.0,0.6640423340893811},{3.0,0.9160403856699045},{4.0,1.0467479006855158},{5.0,1.0182540574500218},{6.0,0.8458784555113991},{7.0,0.5604202538112227},{8.0,0.14403973876843135},{9.0,-0.3176335680004537},{10.0,-0.6060418094587877},{11.0,-0.6975034470919675},{12.0,-0.661105865706986},{13.0,-0.5555955924322918},{14.0,-0.40289881262163335},{15.0,-0.17507643932847297},{16.0,0.10354390025727533},{17.0,0.36266292317402665},{18.0,0.5531923945891302},{19.0,0.6285373322994181},{20.0,0.6664476209357446},{21.0,0.6145392952512397},{22.0,0.3945719938925617},{23.0,0.12718082897291547},{24.0,-0.13348407993186787},{25.0,-0.3509903807170344},{26.0,-0.4983445054791567},{27.0,-0.544201395882341},{28.0,-0.48148297287242786},{29.0,-0.33156711904350167},{30.0,-0.13528141998801121},{31.0,0.060749316095250076},{32.0,0.244756070284783},{33.0,0.393163223203694},{34.0,0.47457473143669227},{35.0,0.49155348871626153},{36.0,0.43070403195454304},{37.0,0.2934895291907877},{38.0,0.12277985887344023},{39.0,-0.048690990899983855},{40.0,-0.19430538332434022},{41.0,-0.2788015873841921},{42.0,-0.29401216540794256},{43.0,-0.2453541744344323},{44.0,-0.15000957410348092},{45.0,-0.04456283914383648},{46.0,0.0778479116301625},{47.0,0.1892392883880221},{48.0,0.2560546837300053},{49.0,0.27573507431970684},{50.0,0.24765198441014363},{51.0,0.1783747647789729},{52.0,0.08011709620349881},{53.0,-0.026712521560818544},{54.0,-0.11834418546580304},{55.0,-0.1815488199710236},{56.0,-0.2048410940900469},{57.0,-0.18285259779420507},{58.0,-0.11657940633998473},{59.0,-0.037704288215735945},{60.0,0.030181219397116123},{61.0,0.10448534933852163},{62.0,0.16051839179291832},{63.0,0.17871744133867049},{64.0,0.17268995568911533},{65.0,0.13932496960036658},{66.0,0.08813228590611055},{67.0,0.030094283978958435},{68.0,-0.02536731652227839},{69.0,-0.06641672452764547},{70.0,-0.08585556127545513},{71.0,-0.08165710272080254},{72.0,-0.06274780869738278},{73.0,-0.026057870914989272},{74.0,0.016787008180736748},{75.0,0.050837499925456074},{76.0,0.0744956708404123},{77.0,0.07975243606133914},{78.0,0.06844050988382658},{79.0,0.049767680129691814},{80.0,0.02425010488786994},{81.0,-0.0013674680958972775},{82.0,-0.024495695925842383},{83.0,-0.04125311758334143},{84.0,-0.04036274678738295},{85.0,-0.03295454381269702},{86.0,-0.024560483531857698},{87.0,-0.006753628285296686},{88.0,0.013138285172358167},{89.0,0.025403381600791818},{90.0,0.03140031462410811},{91.0,0.033662261761331504},{92.0,0.03204040986105417},{93.0,0.027577026204991587},{94.0,0.015818487173983944},{95.0,0.0030545360056109306},{96.0,-0.0018184707779903527},{97.0,-0.00368143256129519},{98.0,-0.005042352152483138},{99.0,-0.002310801806162013},{100.0,1.554417254711617E-4},{101.0,0.0018822365756274806},{102.0,0.00302667676880484},{103.0,0.0014066616632248897},{104.0,0.005789640149356952},{105.0,0.01220095983352786},{106.0,0.007018647665707413},{107.0,-3.235413465208003E-4},{108.0,-6.380044061396907E-4},{109.0,0.0024096316886461177},{110.0,0.0033738916258939343},{111.0,0.002480039376784604},{112.0,0.002984021157383403},{113.0,0.0012796561986629243},{114.0,-0.0025942570367576082},{115.0,-0.004266844611367094},{116.0,0.005098737559155323},{117.0,0.006991934385904683},{118.0,-0.00799750345545478},{119.0,-0.01069687761564778},{120.0,0.0013880039717523254},{121.0,0.002050106431286409},{122.0,-0.008040428774570204},{123.0,-0.00893356261511596},{124.0,-0.0021703612122965605},{125.0,0.0013129960818231451},{126.0,NaN}}</property>
+                        </property>
+                        <property name="index" type="int">127</property>
+                        <property name="marker_shape" type="int">2</property>
+                        <property name="marker_size" type="int">2</property>
+                        <property name="sorted" type="boolean">false</property>
+                        <property name="connected" type="boolean">true</property>
+                        <property name="x_name" type="string">row</property>
+                        <property name="y_name" type="string">v_{x}</property>
+                        <property name="line_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">178</property>
+                            <property name="blue" type="int">178</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="fill_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">100</property>
+                        </object>
+                        </property>
+                        <property name="edge_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="errorbar_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="datasetID" type="int">2039513270</property>
+                        <property name="visible" type="array" class="[Z">
+                            <property name="array" type="string">{false,true}</property>
+                        </property>
+                    </object>
+                    </property>
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.tools.DataColumn">
+                        <property name="points" type="array" class="[[D">
+                            <property name="array" type="string">{{0.0,NaN},{1.0,-0.0033920290152053933},{2.0,-0.07669005561218456},{3.0,-0.27063506147653305},{4.0,-0.5352609151863926},{5.0,-0.8459218623646979},{6.0,-1.160605029826361},{7.0,-1.4885385456913074},{8.0,-1.6400036723853517},{9.0,-1.5072098537417338},{10.0,-1.2878836589966165},{11.0,-0.9685445500211116},{12.0,-0.6296134638089023},{13.0,-0.38918680687312385},{14.0,-0.22673854856970757},{15.0,-0.09269464026777632},{16.0,0.0496806627982173},{17.0,0.19938704395507204},{18.0,0.35980088601445526},{19.0,0.536452232492588},{20.0,0.7929123094029963},{21.0,1.0585090012575802},{22.0,1.20114327346194},{23.0,1.2685545389406792},{24.0,1.2202347935053703},{25.0,1.0700688647804564},{26.0,0.8799923404962849},{27.0,0.6701752673524644},{28.0,0.46986569747108003},{29.0,0.27870987847917833},{30.0,0.10219533648966564},{31.0,-0.05274073820365744},{32.0,-0.1973581801114967},{33.0,-0.3548622516864608},{34.0,-0.5109576099680353},{35.0,-0.6842431341375678},{36.0,-0.8606870821895856},{37.0,-0.9773888881018103},{38.0,-1.0363113113308053},{39.0,-1.004926436468131},{40.0,-0.8948487574508763},{41.0,-0.7506989687954109},{42.0,-0.5788534869204868},{43.0,-0.3972330231890437},{44.0,-0.2212734993499084},{45.0,-0.05992366518573059},{46.0,0.10173930722267172},{47.0,0.2656882674822876},{48.0,0.42183369641622503},{49.0,0.5516635783078307},{50.0,0.6696635540167956},{51.0,0.761885392969667},{52.0,0.7988317240986054},{53.0,0.7928570125054951},{54.0,0.738595770103332},{55.0,0.6367428877690152},{56.0,0.5076024179551721},{57.0,0.3727820711904607},{58.0,0.22705952239200755},{59.0,0.08241763790403904},{60.0,-0.052062420990875394},{61.0,-0.18765721884388767},{62.0,-0.30974427934303633},{63.0,-0.40355445915179744},{64.0,-0.4855409013356881},{65.0,-0.5637866025999964},{66.0,-0.6050067016402471},{67.0,-0.598383107327339},{68.0,-0.5637581114811621},{69.0,-0.5025698901417816},{70.0,-0.41354954439038744},{71.0,-0.3065602828519832},{72.0,-0.1926319520309866},{73.0,-0.07585403186255896},{74.0,0.038224382723334956},{75.0,0.14741943178824626},{76.0,0.25150654812176043},{77.0,0.32918114600444814},{78.0,0.3613057673451185},{79.0,0.38960033346757866},{80.0,0.4187559704776502},{81.0,0.39950627302467623},{82.0,0.36297824507922666},{83.0,0.32633084771149706},{84.0,0.2553052696781421},{85.0,0.16933260580552342},{86.0,0.0978051472161947},{87.0,0.03243084219239384},{88.0,-0.04105019766356465},{89.0,-0.11103672373460989},{90.0,-0.1663988287027665},{91.0,-0.21132038228412678},{92.0,-0.2389999788375862},{93.0,-0.24429421947824909},{94.0,-0.21620402167661656},{95.0,-0.19115960179047828},{96.0,-0.1850337158228007},{97.0,-0.15414250223233966},{98.0,-0.08954220411889612},{99.0,-0.0276671553373314},{100.0,0.009828697500739565},{101.0,0.04032028826134693},{102.0,0.06872891105796082},{103.0,0.08698373241034281},{104.0,0.10162319584748683},{105.0,0.10618028624685731},{106.0,0.09063481002290606},{107.0,0.0695691780966088},{108.0,0.04901932187270864},{109.0,0.010419760394516588},{110.0,-0.03863176839695197},{111.0,-0.07041453162527275},{112.0,-0.07988826867978026},{113.0,-0.07474636474781009},{114.0,-0.06748498336462647},{115.0,-0.056724983709599254},{116.0,-0.044090090541748894},{117.0,-0.02358622202343701},{118.0,-0.012558322507493233},{119.0,0.0020998831474867458},{120.0,0.03487242576401614},{121.0,0.04427724710859459},{122.0,0.06013452977359085},{123.0,0.08237491748360984},{124.0,0.07966664937217303},{125.0,0.07834639177124089},{126.0,NaN}}</property>
+                        </property>
+                        <property name="index" type="int">127</property>
+                        <property name="marker_shape" type="int">2</property>
+                        <property name="marker_size" type="int">2</property>
+                        <property name="sorted" type="boolean">false</property>
+                        <property name="connected" type="boolean">true</property>
+                        <property name="x_name" type="string">row</property>
+                        <property name="y_name" type="string">v_{y}</property>
+                        <property name="line_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">255</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">255</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="fill_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">100</property>
+                        </object>
+                        </property>
+                        <property name="edge_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="errorbar_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="datasetID" type="int">1072434591</property>
+                        <property name="visible" type="array" class="[Z">
+                            <property name="array" type="string">{false,true}</property>
+                        </property>
+                    </object>
+                    </property>
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.tools.DataColumn">
+                        <property name="points" type="array" class="[[D">
+                            <property name="array" type="string">{{0.0,NaN},{1.0,NaN},{2.0,7.730487943231511},{3.0,5.585043763610011},{4.0,1.6075073369917585},{5.0,-3.0545162245847077},{6.0,-6.76003430987706},{7.0,-10.67328145352315},{8.0,-12.841614792761144},{9.0,-11.112077492743758},{10.0,-5.786447763077367},{11.0,-0.8856056630332547},{12.0,2.0623772239301204},{13.0,3.892361709344334},{14.0,5.748400855521566},{15.0,7.503896504526759},{16.0,8.008193305562472},{17.0,6.697435472311512},{18.0,3.935561689111768},{19.0,1.9179897386057598},{20.0,-0.5413832532296332},{21.0,-3.9143796253264522},{22.0,-7.215627962824979},{23.0,-7.89955416819669},{24.0,-7.115785758580235},{25.0,-5.471845410185301},{26.0,-2.8320582183552676},{27.0,0.20198329223542594},{28.0,3.1946441010321194},{29.0,5.100405661404359},{30.0,5.877453855660113},{31.0,5.682635699252803},{32.0,4.953616077086785},{33.0,3.4125952109285533},{34.0,1.5160306041794824},{35.0,-0.7269416774829406},{36.0,-2.898942847547213},{37.0,-4.599015116304703},{38.0,-5.082411021064461},{39.0,-4.749537620109959},{40.0,-3.3828391079439544},{41.0,-1.5469199184197622},{42.0,0.5414214020431402},{43.0,2.0835101768276707},{44.0,3.0100034191080636},{45.0,3.434432927367705},{46.0,3.4304968648351992},{47.0,2.6777296137837823},{48.0,1.2873251352540347},{49.0,-0.11727556982021049},{50.0,-1.4550923828509275},{51.0,-2.492163410265565},{52.0,-3.0534367084549756},{53.0,-2.948856305149587},{54.0,-2.3222593770278124},{55.0,-1.2731273049465932},{56.0,-0.03237925598915155},{57.0,1.3346134579141053},{58.0,2.098644855253109},{59.0,2.22943588052026},{60.0,2.1421214249357647},{61.0,1.892874203281864},{62.0,1.1337442510396472},{63.0,0.1914694253627206},{64.0,-0.6064493970883179},{65.0,-1.2324245768019766},{66.0,-1.6508670841800377},{67.0,-1.6698978372980098},{68.0,-1.4548989172912297},{69.0,-0.8846647842589805},{70.0,-0.24692157983981752},{71.0,0.3458040673984258},{72.0,0.8413788589817146},{73.0,1.1607196517508942},{74.0,1.1536988883182935},{75.0,0.8619374710147563},{76.0,0.4202541862094877},{77.0,-0.07343031360087947},{78.0,-0.4474374658187055},{79.0,-0.664083895047618},{80.0,-0.7513463723918089},{81.0,-0.7413192712782387},{82.0,-0.5798350667706427},{83.0,-0.2322904678619732},{84.0,0.09491339662408305},{85.0,0.2547449268986343},{86.0,0.3933604784014332},{87.0,0.5494324920271694},{88.0,0.4775930255981575},{89.0,0.2816039650924951},{90.0,0.12163791663261365},{91.0,0.01152782900525361},{92.0,-0.09097150390676449},{93.0,-0.25317934892831284},{94.0,-0.3445088231450934},{95.0,-0.2688192780063844},{96.0,-0.107233689886441},{97.0,-0.04753835096635695},{98.0,0.02743336541608844},{99.0,0.06175491103976981},{100.0,0.07809155457040438},{101.0,0.028209176858965245},{102.0,0.003049795158353598},{103.0,0.05004842234347889},{104.0,0.14479338864719452},{105.0,0.00636625440250819},{106.0,-0.15558347005604117},{107.0,-0.12744610844304546},{108.0,0.04573900832526174},{109.0,0.043768152014271325},{110.0,0.017949112297949477},{111.0,-0.01576402639767718},{112.0,-0.015817308521138024},{113.0,-0.08577947250005288},{114.0,-0.07172605412498868},{115.0,0.1228595553796557},{116.0,0.12175157332765237},{117.0,-0.16947832356843207},{118.0,-0.22978454663982123},{119.0,0.11057967530987423},{120.0,0.16524976492625645},{121.0,-0.11403547799753792},{122.0,-0.14939596525613286},{123.0,0.06938965844717314},{124.0,0.14892506540085648},{125.0,NaN},{126.0,NaN}}</property>
+                        </property>
+                        <property name="index" type="int">127</property>
+                        <property name="marker_shape" type="int">2</property>
+                        <property name="marker_size" type="int">2</property>
+                        <property name="sorted" type="boolean">false</property>
+                        <property name="connected" type="boolean">true</property>
+                        <property name="x_name" type="string">row</property>
+                        <property name="y_name" type="string">a_{x}</property>
+                        <property name="line_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">128</property>
+                            <property name="green" type="int">72</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="fill_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">100</property>
+                        </object>
+                        </property>
+                        <property name="edge_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="errorbar_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="datasetID" type="int">1792035854</property>
+                        <property name="visible" type="array" class="[Z">
+                            <property name="array" type="string">{false,true}</property>
+                        </property>
+                    </object>
+                    </property>
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.tools.DataColumn">
+                        <property name="points" type="array" class="[[D">
+                            <property name="array" type="string">{{0.0,NaN},{1.0,NaN},{2.0,-4.080942983686082},{3.0,-6.699195115228567},{4.0,-8.755857460898916},{5.0,-9.163578686626472},{6.0,-9.875607843129208},{7.0,-6.548081893210026},{8.0,-0.6919876027167875},{9.0,5.270018391570932},{10.0,8.120648232488534},{11.0,9.661053671864526},{12.0,8.650301674928517},{13.0,6.127172552259228},{14.0,4.4695637796179355},{15.0,4.202826343050241},{16.0,4.322543555083091},{17.0,4.717720162528195},{18.0,5.001911107027127},{19.0,6.686962127606928},{20.0,7.489120507221577},{21.0,6.182126125292358},{22.0,3.194320142819566},{23.0,0.15593285696031398},{24.0,-2.8170919666598064},{25.0,-5.131110824314839},{26.0,-5.927708403599363},{27.0,-6.159920805794032},{28.0,-5.8647177134824275},{29.0,-5.510559549810426},{30.0,-4.961389707380898},{31.0,-4.527800508687721},{32.0,-4.547050504970183},{33.0,-4.658130767347304},{34.0,-5.0264286583701345},{35.0,-5.1301586431366175},{36.0,-4.378182822459867},{37.0,-2.657572837243421},{38.0,-0.3201511494944339},{39.0,2.0041380309048904},{40.0,3.8355965184212595},{41.0,4.704080805156674},{42.0,5.299435912545373},{43.0,5.33317610993262},{44.0,5.070988181284401},{45.0,4.865821775752354},{46.0,4.86777684772879},{47.0,4.796197581958587},{48.0,4.255179313220732},{49.0,3.7829388721560178},{50.0,3.0579471462654504},{51.0,1.9696939726010192},{52.0,0.4588767254534336},{53.0,-0.9093392168172876},{54.0,-2.334422912280243},{55.0,-3.4286805571622994},{56.0,-3.9493297368908844},{57.0,-4.229416641840755},{58.0,-4.3085157201653965},{59.0,-4.214320298554482},{60.0,-4.047795770303055},{61.0,-3.8372210783870377},{62.0,-3.2348172372215873},{63.0,-2.6758474324273096},{64.0,-2.3819047564111253},{65.0,-1.7422396970848384},{66.0,-0.5455132545455493},{67.0,0.6027753392647464},{68.0,1.4500699651047428},{69.0,2.2429758681521017},{70.0,2.9291613005029355},{71.0,3.3011113088682578},{72.0,3.464483170074336},{73.0,3.447064698374762},{74.0,3.3602025778340785},{75.0,3.187650642453513},{76.0,2.6923548680814853},{77.0,1.6400502947451998},{78.0,1.0026256369603834},{79.0,0.7754676350584646},{80.0,0.1293036366773514},{81.0,-0.7506797015032189},{82.0,-1.146848356877572},{83.0,-1.6392893922149756},{84.0,-2.2891408070487733},{85.0,-2.3653511774931553},{86.0,-2.068445795885263},{87.0,-2.098467735217373},{88.0,-2.1115161084189773},{89.0,-1.896877044678473},{90.0,-1.4965727342582302},{91.0,-1.0821249553473582},{92.0,-0.4904782855477615},{93.0,0.36137954761360197},{94.0,0.6995143257793398},{95.0,0.5310464787667103},{96.0,0.5853728771439148},{97.0,1.4214214851443447},{98.0,1.8300078212932263},{99.0,1.5112845922586982},{100.0,1.0363225871575366},{101.0,0.8775379004241334},{102.0,0.6886223219971634},{103.0,0.5187545624998636},{104.0,0.24875012734242016},{105.0,-0.14709945056102933},{106.0,-0.5356449356593259},{107.0,-0.624819870122925},{108.0,-0.9264368911400281},{109.0,-1.2592898614197927},{110.0,-1.2085893024724437},{111.0,-0.6119720236153581},{112.0,-0.08833880286653795},{113.0,0.18263309246591977},{114.0,0.27669220459304644},{115.0,0.3410724931253528},{116.0,0.5197767855908346},{117.0,0.4131134223164391},{118.0,0.47323955106422205},{119.0,0.6545504594776633},{120.0,0.6006810992255283},{121.0,0.47481131160409146},{122.0,0.4754366835746549},{123.0,0.32187067845831746},{124.0,-0.03288105659658259},{125.0,NaN},{126.0,NaN}}</property>
+                        </property>
+                        <property name="index" type="int">127</property>
+                        <property name="marker_shape" type="int">2</property>
+                        <property name="marker_size" type="int">2</property>
+                        <property name="sorted" type="boolean">false</property>
+                        <property name="connected" type="boolean">true</property>
+                        <property name="x_name" type="string">row</property>
+                        <property name="y_name" type="string">a_{y}</property>
+                        <property name="line_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">128</property>
+                            <property name="blue" type="int">17</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="fill_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">100</property>
+                        </object>
+                        </property>
+                        <property name="edge_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="errorbar_color" type="object">
+                        <object class="java.awt.Color">
+                            <property name="red" type="int">0</property>
+                            <property name="green" type="int">0</property>
+                            <property name="blue" type="int">0</property>
+                            <property name="alpha" type="int">255</property>
+                        </object>
+                        </property>
+                        <property name="datasetID" type="int">890188862</property>
+                        <property name="visible" type="array" class="[Z">
+                            <property name="array" type="string">{false,true}</property>
+                        </property>
+                    </object>
+                    </property>
+                </property>
+                <property name="id" type="int">2028518370</property>
+            </object>
+            </property>
+            <property name="constants" type="array" class="[[Ljava.lang.Object;">
+                <property name="[0]" type="array" class="[Ljava.lang.Object;">
+                    <property name="[0]" type="string">b</property>
+                    <property name="[1]" type="double">0.03</property>
+                    <property name="[2]" type="string">0.03</property>
+                </property>
+                <property name="[1]" type="array" class="[Ljava.lang.Object;">
+                    <property name="[0]" type="string">l</property>
+                    <property name="[1]" type="double">0.193</property>
+                    <property name="[2]" type="string">0.193</property>
+                </property>
+                <property name="[2]" type="array" class="[Ljava.lang.Object;">
+                    <property name="[0]" type="string">m</property>
+                    <property name="[1]" type="double">0.1232109</property>
+                    <property name="[2]" type="string">0.1232109</property>
+                </property>
+                <property name="[3]" type="array" class="[Ljava.lang.Object;">
+                    <property name="[0]" type="string">g</property>
+                    <property name="[1]" type="double">9.81</property>
+                    <property name="[2]" type="string">9.81</property>
+                </property>
+                <property name="[4]" type="array" class="[Ljava.lang.Object;">
+                    <property name="[0]" type="string">freq</property>
+                    <property name="[1]" type="double">9.424767000000001</property>
+                    <property name="[2]" type="string">(3.141589)*3</property>
+                </property>
+                <property name="[5]" type="array" class="[Ljava.lang.Object;">
+                    <property name="[0]" type="string">phi</property>
+                    <property name="[1]" type="double">0.05</property>
+                    <property name="[2]" type="string">0.05</property>
+                </property>
+            </property>
+            <property name="data_functions" type="array" class="[Lorg.opensourcephysics.display.DataFunction;">
+                <property name="[0]" type="object">
+                <object class="org.opensourcephysics.display.DataFunction">
+                    <property name="function_name" type="string">alpha</property>
+                    <property name="function" type="string">(b/m)*ω-(g/l)*sin(θ)</property>
+                    <property name="points" type="array" class="[[D">
+                        <property name="array" type="string">{{0.0,NaN},{1.0,-51.252379503869726},{2.0,-51.14071144249898},{3.0,-50.01087357782264},{4.0,-46.76610529782375},{5.0,-41.057666537098555},{6.0,-32.4264401278086},{7.0,-21.545197398511597},{8.0,-7.08742601481743},{9.0,6.975733769856676},{10.0,19.7931256729435},{11.0,30.20725657255398},{12.0,37.23469817647349},{13.0,41.67193735269422},{14.0,44.49608109006322},{15.0,46.15720727362996},{16.0,46.71464589495639},{17.0,46.07020857201133},{18.0,44.04186688300442},{19.0,40.32983969879794},{20.0,35.22578578991025},{21.0,27.009104412195743},{22.0,16.899763808302442},{23.0,5.985788468171009},{24.0,-5.285385271232644},{25.0,-15.373056263378245},{26.0,-24.037269518371915},{27.0,-31.00533144706946},{28.0,-36.197247674495856},{29.0,-39.69077637485496},{30.0,-41.550280159985824},{31.0,-42.058827226408205},{32.0,-41.34666679473637},{33.0,-39.305534621483424},{34.0,-35.72892239255555},{35.0,-30.789442071755758},{36.0,-24.08621814335765},{37.0,-16.051715454554014},{38.0,-7.25081341354805},{39.0,1.9304587908118507},{40.0,10.302911776689694},{41.0,17.660877886795852},{42.0,23.566972776217792},{43.0,27.98648822693653},{44.0,30.76933848380406},{45.0,32.15015220789336},{46.0,32.261479591819416},{47.0,30.915660280865733},{48.0,28.18098149597048},{49.0,24.09185176231073},{50.0,18.99444269875029},{51.0,12.777358513164437},{52.0,5.997554903691543},{53.0,-0.9616489034787102},{54.0,-7.71380427873674},{55.0,-13.812201833947185},{56.0,-18.893698751741123},{57.0,-22.83538340876136},{58.0,-25.626819354817474},{59.0,-27.02995952154246},{60.0,-27.327905970375426},{61.0,-26.52874212218958},{62.0,-24.51322415918625},{63.0,-21.52087652518572},{64.0,-17.81484718901875},{65.0,-13.368478307612431},{66.0,-8.283718137249112},{67.0,-3.034464560872172},{68.0,2.0311920177930443},{69.0,6.732897340889618},{70.0,10.802955560844225},{71.0,14.022721112561243},{72.0,16.287892219696992},{73.0,17.598130030544027},{74.0,17.876540255723608},{75.0,17.21932789631212},{76.0,15.63059777429523},{77.0,13.162437367817061},{78.0,10.15310321209467},{79.0,7.061451140755934},{80.0,3.5566295618934385},{81.0,-0.08712741723884038},{82.0,-3.3381869577689383},{83.0,-6.374388853322196},{84.0,-9.038494353880152},{85.0,-10.908344828359544},{86.0,-12.107777387216318},{87.0,-12.750815922272103},{88.0,-12.830967805226065},{89.0,-12.219760513821535},{90.0,-11.097307537290197},{91.0,-9.520016009716377},{92.0,-7.5939003933250975},{93.0,-5.484397539039742},{94.0,-3.3893178872071017},{95.0,-1.7239144355169205},{96.0,-0.0880671856239243},{97.0,1.4807940659373608},{98.0,2.6609566784941765},{99.0,3.1660201639835597},{100.0,3.256246613844797},{101.0,3.082169101962531},{102.0,2.640368244911747},{103.0,1.9653330174748442},{104.0,1.1954825597713363},{105.0,0.25213122170584756},{106.0,-0.6302979681460407},{107.0,-1.3358117950062245},{108.0,-1.8646073098297795},{109.0,-2.2416474536982918},{110.0,-2.1471715060567447},{111.0,-1.682084063290384},{112.0,-1.0003533411997132},{113.0,-0.32898845208558347},{114.0,0.2851641276149713},{115.0,0.8403103524310387},{116.0,1.2793104701581812},{117.0,1.627460491866605},{118.0,1.7140521342393054},{119.0,1.8759397192421556},{120.0,1.742851308926298},{121.0,1.3346390300897306},{122.0,1.0194040825730877},{123.0,0.3591393333471163},{124.0,-0.3600394077642519},{125.0,-1.005508516074177},{126.0,NaN}}</property>
+                    </property>
+                    <property name="index" type="int">127</property>
+                    <property name="marker_shape" type="int">2</property>
+                    <property name="marker_size" type="int">4</property>
+                    <property name="sorted" type="boolean">false</property>
+                    <property name="connected" type="boolean">true</property>
+                    <property name="x_name" type="string">row</property>
+                    <property name="y_name" type="string">alpha</property>
+                    <property name="line_color" type="object">
+                    <object class="java.awt.Color">
+                        <property name="red" type="int">0</property>
+                        <property name="green" type="int">0</property>
+                        <property name="blue" type="int">0</property>
+                        <property name="alpha" type="int">255</property>
+                    </object>
+                    </property>
+                    <property name="fill_color" type="object">
+                    <object class="java.awt.Color">
+                        <property name="red" type="int">0</property>
+                        <property name="green" type="int">0</property>
+                        <property name="blue" type="int">0</property>
+                        <property name="alpha" type="int">100</property>
+                    </object>
+                    </property>
+                    <property name="edge_color" type="object">
+                    <object class="java.awt.Color">
+                        <property name="red" type="int">0</property>
+                        <property name="green" type="int">0</property>
+                        <property name="blue" type="int">0</property>
+                        <property name="alpha" type="int">255</property>
+                    </object>
+                    </property>
+                    <property name="errorbar_color" type="object">
+                    <object class="java.awt.Color">
+                        <property name="red" type="int">0</property>
+                        <property name="green" type="int">0</property>
+                        <property name="blue" type="int">0</property>
+                        <property name="alpha" type="int">255</property>
+                    </object>
+                    </property>
+                    <property name="datasetID" type="int">278880172</property>
+                    <property name="visible" type="array" class="[Z">
+                        <property name="array" type="string">{false,true}</property>
+                    </property>
+                </object>
+                </property>
+            </property>
+            <property name="fits" type="collection" class="java.util.ArrayList">
+                <property name="item" type="object">
+                <object class="org.opensourcephysics.tools.FitFunctionPanel">
+                    <property name="name" type="string">Sinusoid</property>
+                    <property name="description" type="string">y = (k/m)</property>
+                    <property name="user_parameters" type="array" class="[Lorg.opensourcephysics.tools.Parameter;">
+                        <property name="[0]" type="object">
+                        <object class="org.opensourcephysics.tools.Parameter">
+                            <property name="name" type="string">l</property>
+                            <property name="function" type="string">0.193</property>
+                            <property name="editable" type="boolean">true</property>
+                            <property name="name_editable" type="boolean">true</property>
+                            <property name="description" type="string">Amplitude</property>
+                        </object>
+                        </property>
+                        <property name="[1]" type="object">
+                        <object class="org.opensourcephysics.tools.Parameter">
+                            <property name="name" type="string">m</property>
+                            <property name="function" type="string">0.1232109</property>
+                            <property name="editable" type="boolean">true</property>
+                            <property name="name_editable" type="boolean">true</property>
+                            <property name="description" type="string">Angular frequency</property>
+                        </object>
+                        </property>
+                        <property name="[2]" type="object">
+                        <object class="org.opensourcephysics.tools.Parameter">
+                            <property name="name" type="string">k</property>
+                            <property name="function" type="string">0.1</property>
+                            <property name="editable" type="boolean">true</property>
+                            <property name="name_editable" type="boolean">true</property>
+                            <property name="description" type="string">Initial phase</property>
+                        </object>
+                        </property>
+                        <property name="[3]" type="object">
+                        <object class="org.opensourcephysics.tools.Parameter">
+                            <property name="name" type="string">g</property>
+                            <property name="function" type="string">9.81</property>
+                            <property name="editable" type="boolean">true</property>
+                            <property name="name_editable" type="boolean">true</property>
+                        </object>
+                        </property>
+                        <property name="[4]" type="object">
+                        <object class="org.opensourcephysics.tools.Parameter">
+                            <property name="name" type="string">param</property>
+                            <property name="function" type="string">0</property>
+                            <property name="editable" type="boolean">true</property>
+                            <property name="name_editable" type="boolean">true</property>
+                        </object>
+                        </property>
+                    </property>
+                    <property name="function_editor" type="object">
+                    <object class="org.opensourcephysics.tools.UserFunctionEditor">
+                        <property name="main_functions" type="array" class="[Lorg.opensourcephysics.tools.UserFunction;">
+                            <property name="[0]" type="object">
+                            <object class="org.opensourcephysics.tools.UserFunction">
+                                <property name="name" type="string">Sinusoid</property>
+                                <property name="description" type="string">Sine function with constant amplitude</property>
+                                <property name="name_editable" type="boolean">true</property>
+                                <property name="parameter_names" type="array" class="[Ljava.lang.String;">
+                                    <property name="[0]" type="string">l</property>
+                                    <property name="[1]" type="string">m</property>
+                                    <property name="[2]" type="string">k</property>
+                                    <property name="[3]" type="string">g</property>
+                                    <property name="[4]" type="string">param</property>
+                                </property>
+                                <property name="parameter_values" type="array" class="[D">
+                                    <property name="array" type="string">{0.193,0.1232109,0.1,9.81,0.0}</property>
+                                </property>
+                                <property name="parameter_descriptions" type="array" class="[Ljava.lang.String;">
+                                    <property name="[0]" type="string">Amplitude</property>
+                                    <property name="[1]" type="string">Angular frequency</property>
+                                    <property name="[2]" type="string">Initial phase</property>
+                                </property>
+                                <property name="variables" type="array" class="[Ljava.lang.String;">
+                                    <property name="[0]" type="string">x</property>
+                                </property>
+                                <property name="expression" type="string">(k/m)</property>
+                            </object>
+                            </property>
+                        </property>
+                    </object>
+                    </property>
+                    <property name="original_name" type="string">Sinusoid</property>
+                </object>
+                </property>
+            </property>
+            <property name="selected_fit" type="string">Sinusoid</property>
+            <property name="autofit" type="boolean">false</property>
+            <property name="fit_parameters" type="array" class="[D">
+                <property name="array" type="string">{0.193,0.1232109,0.1,9.81,0.0}</property>
+            </property>
+            <property name="fit_color" type="object">
+            <object class="java.awt.Color">
+                <property name="red" type="int">255</property>
+                <property name="green" type="int">255</property>
+                <property name="blue" type="int">255</property>
+                <property name="alpha" type="int">255</property>
+            </object>
+            </property>
+            <property name="fit_visible" type="boolean">false</property>
+            <property name="props_visible" type="boolean">true</property>
+            <property name="stats_visible" type="boolean">false</property>
+            <property name="split_pane" type="int">369</property>
+            <property name="fit_split_pane" type="int">281</property>
+            <property name="column_order" type="array" class="[I">
+                <property name="array" type="string">{0,1,3,5,4,2,6,7,8,9,10,11}</property>
+            </property>
+            <property name="hidden_markers" type="array" class="[Ljava.lang.String;">
+                <property name="[0]" type="string">t</property>
+                <property name="[1]" type="string">ω</property>
+                <property name="[2]" type="string">θ</property>
+            </property>
+        </object>
+        </property>
     </property>
 </object>
