@@ -4,24 +4,24 @@ clear
 clc
 close all
 %% Variables para ODE45
-tspan = [0 15];
+tspan = 0:0.05:15;
 theta = pi/2;
 p0 = [0 theta ];         %theta, d_theta
 
 [t,x] = ode45(@pendulo,tspan,p0,'-MaxStep','1e-50');
 
-figure(1)
-plot(t,x(:,2),'k',t,x(:,1),'k--')
-xlim([0 15])
-xlabel('Tiempo','Interpreter','latex')
-ylabel('$\theta, p_{\theta}$','Interpreter','latex')
-legend({'  $\theta$','  $p_{\theta}$'},'Interpreter','latex','location', 'south', 'orientation', 'horizontal')
-legend('boxoff')
-title('Posición/Momento péndulo')
-set(gcf,'Color',[1 1 1])
-##grid off
-
-print('-dpdflatex', '../Report/img/presPosVelHamilton.tex', '-S240,200','-mono');
+%%figure(1)
+%%plot(t,x(:,2),'k',t,x(:,1),'k--')
+%%xlim([0 15])
+%%xlabel('Tiempo','Interpreter','latex')
+%%ylabel('$\theta, p_{\theta}$','Interpreter','latex')
+%%legend({'  $\theta$','  $p_{\theta}$'},'Interpreter','latex','location', 'south', 'orientation', 'horizontal')
+%%legend('boxoff')
+%%title('Posición/Momento péndulo')
+%%set(gcf,'Color',[1 1 1])
+%%##grid off
+%%
+%%print('-dpdflatex', '../Report/img/presPosVelHamilton.tex', '-S240,200','-mono');
 
 figure(2)
 plot(x(:,2),x(:,1),'k')

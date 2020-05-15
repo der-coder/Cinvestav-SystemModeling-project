@@ -1,3 +1,5 @@
+\pagebreak
+
 \section{Simulación}
 
 El modelo matemático obtenido se implementó en MATLAB 
@@ -40,16 +42,6 @@ Esto se observa en la figura \ref{fig: phase plot theta no friction}, que
 muestra el diagrama de fase del sistema.
 El comportamiento del sistema describe una elipse para todos los períodos del sistema.
 
-
-\begin{figure}[htb!]
- \centering 
- \import{./img/}{PosVelNF.tex}
-%  \includegraphics[scale=0.2]{PosVelNF.png}
- % fasependulox2.png: 1853x1003 px, 96dpi, 49.02x26.53 cm, bb=0 0 1390 752
- \caption{Comportamiento de $\theta(t)$ y $\dot{\theta}(t)$ en el tiempo sin fricción.}
- \label{fig: time plot theta dtheta no friction}
-\end{figure}
-
 \begin{figure}[htb!]
  \centering 
  \import{./img/}{faseNF.tex}
@@ -59,7 +51,19 @@ El comportamiento del sistema describe una elipse para todos los períodos del s
  \label{fig: phase plot theta no friction}
 \end{figure}
 
-\pagebreak
+
+
+\begin{figure}[hbt!]
+ \centering 
+ \import{./img/}{PosVelNF.tex}
+%  \includegraphics[scale=0.2]{PosVelNF.png}
+ % fasependulox2.png: 1853x1003 px, 96dpi, 49.02x26.53 cm, bb=0 0 1390 752
+ \caption{Comportamiento de $\theta(t)$ y $\dot{\theta}(t)$ en el tiempo sin fricción.}
+ \label{fig: time plot theta dtheta no friction}
+\end{figure}
+
+
+\clearpage
 
 \subsection{Caso con fricción}
 \label{simulation friction}
@@ -97,6 +101,8 @@ del marco referencial.
 \caption{Diagrama de fase de $\theta(t)$ y $\dot{\theta}(t)$.}
  \label{fig: phase plot theta friction}
 \end{figure}
+
+\clearpage
 
 \subsection{Hamiltoniano}
 
